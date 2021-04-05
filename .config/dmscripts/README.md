@@ -14,13 +14,6 @@ The scripts included in this repo are:
 
 Of course, dmenu is a dependency for all of these scripts. To see the dependencies of each individual script, check the top commented block of text in each script.
 
-# Installation
-
-All you need to do is clone this repositor and make the scripts executable. Run the following command:
-
-    git clone https://gitlab.com/dwt1/dmscripts.git
-    chmod -R 755 dmscripts
-
 To run a script:
 
      bash /path/to/dmscripts/name_of_script
