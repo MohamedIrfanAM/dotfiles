@@ -1,0 +1,18 @@
+[user]
+	name = MohamedIrfanAM
+	email = i4irfan777@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
+[diff]
+	tool = vimdiff
+[color]
+	ui = true
+	status = auto
+	branch = auto
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvimi
+[difftool "vimdiff"]
+	path = nvim
