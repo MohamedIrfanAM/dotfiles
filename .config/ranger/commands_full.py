@@ -701,9 +701,8 @@ class delete(Command):
             self.fm.delete(files)
 
 
-class trash(Command):
+ class trash(Command):
     """:trash
-
     Tries to move the selection or the files passed in arguments (if any) to
     the trash, using rifle rules with label "trash".
     The arguments use a shell-like escaping.
