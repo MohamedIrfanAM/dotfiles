@@ -133,8 +133,26 @@ fi
 
 IFS=$SAVEIFS
 
+function mkcd {
+  last=$(eval "echo \$$#")
+  if [ ! -n "$last" ]; then
+    echo "Enter a directory name"
+  elif [ -d $last ]; then
+    echo "\`$last' already exists"
+  else
+    mkdir $@ && cd $last
+  fi
+}
 
-
+cdls() {
+        local dir="$1"
+        local dir="${dir:=$HOME}"
+        if [[ -d "$dir" ]]; then
+                cd "$dir" >/dev/null; exa -al --color=always --group-directories-first 
+        else
+                echo "bash: cdls: $dir: Directory not found"
+        fi
+}
 
 # Aliases 
 
