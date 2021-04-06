@@ -1,0 +1,29 @@
+{
+  "contestsDirectory": "/run/media/irfan/Programming/cp/codeforces/",
+  "port": 1327,
+  "editor": "nvim",
+  "terminal": "kitty",
+  "closeAfterClone": true,
+  "showStatusPageOnSubmit": true,
+  "preferredLang": "cpp",
+  "languages": {
+    "cpp": {
+      "template": "/run/media/irfan/Programming/cp/.cph/template.cpp",
+      "command": "g++ -std=gnu++17 -O2",
+      "debugCommand": "g++ -std=gnu++17 -DDEBUG -Wshadow -Wall",
+      "aliases": {
+        "codeforces": "54",
+        "atcoder": "4003"
+      }
+    },
+    "py": {
+      "template": "template.py",
+      "command": "python3",
+      "debugCommand": "python3 -O",
+      "aliases": {
+        "codeforces": "31",
+        "atcoder": "4006"
+      }
+    }
+  }
+}
