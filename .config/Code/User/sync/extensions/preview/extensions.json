@@ -609,7 +609,10 @@
 			"uuid": "5db78037-f674-459f-a236-db622c427c5b"
 		},
 		"version": "4.6.0",
-		"installed": true
+		"installed": true,
+		"state": {
+			"material-icon-theme.version": "4.6.0"
+		}
 	},
 	{
 		"identifier": {
@@ -624,7 +627,7 @@
 			"id": "tabnine.tabnine-vscode",
 			"uuid": "75da638c-c45a-44ea-aa3b-8570a3559810"
 		},
-		"version": "3.2.16",
+		"version": "3.3.0",
 		"installed": true
 	},
 	{
@@ -632,7 +635,7 @@
 			"id": "visualstudioexptteam.vscodeintellicode",
 			"uuid": "876e8f93-74d0-4f4f-91b7-34a09f19f444"
 		},
-		"version": "1.2.11",
+		"version": "1.2.12",
 		"installed": true
 	},
 	{

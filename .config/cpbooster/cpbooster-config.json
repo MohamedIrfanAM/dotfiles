@@ -1,5 +1,5 @@
 {
-  "contestsDirectory": "/run/media/irfan/Programming/cp/codeforces/",
+  "contestsDirectory": "/run/media/irfan/Programming/cp/",
   "port": 1327,
   "editor": "nvim",
   "terminal": "kitty",
