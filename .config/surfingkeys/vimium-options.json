@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nunmap u\nmap <c-u> scrollPageUp\nunmap d\nmap <c-d> scrollPageDown\nunmap x\nmap dd removeTab\nunmap X\nmap u restoreTab",
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap u\nmap <c-u> scrollPageUp\nunmap d\nmap <c-d> scrollPageDown\nmap x removeTab\nmap dd removeTab\nunmap X\nmap u restoreTab",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
