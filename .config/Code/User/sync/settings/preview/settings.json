@@ -1122,7 +1122,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "python.showStartPage": false,
   "editor.snippetSuggestions": "bottom",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Nord",
   "cph.language.cpp.Args": "-Wall -Wextra",
   "cph.general.menuChoices": "cpp",
   "cph.general.defaultLanguage": "cpp",
@@ -1139,6 +1139,5 @@
   "cph.general.defaultLanguageTemplateFileLocation": "/run/media/irfan/Programming/cp/.cph/template.cpp",
   "cph.general.firstTime": false,
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.language": "en,en-GB,en-US",
-  "workbench.activityBar.visible": false
+  "cSpell.language": "en,en-GB,en-US"
 }
