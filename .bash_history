@@ -31,3 +31,21 @@ exit
 read 
  read
 read
+nvm use system
+nvm install node
+nvm ls-remote
+nvm ls-remote node
+nvim B.QueueattheSchool.cpp 
+exit
+cpbooster
+nvim .bashrc 
+bash
+cpbooster
+nvm
+exit
+for i in $(seq 1 10); do time $SHELL -i -c exit; done
+echo $SHELL
+/bin/zsh
+cpbooster
+cpb
+exit

@@ -214,8 +214,8 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 # Unlock LBRY tips
 alias tips='lbrynet txo spend --type=support --is_not_my_input --blocking'
 
-# Thinkorswim
-alias tos="/home/dt/thinkorswim/thinkorswim"
+# # Thinkorswim
+# alias tos="/home/irfan/thinkorswim/thinkorswim"
 
 # force all kakoune windows into one session
 alias kak="/usr/bin/kak -c mysession"
@@ -227,8 +227,8 @@ alias kakd="/usr/bin/kak -d -s mysession &"
 # Or install it from the Arch User Repository: shell-color-scripts
 colorscript random
 
-### SOURCING BROOT ###
-source /home/dt/.config/broot/launcher/bash/br
+# ### SOURCING BROOT ###
+# source /home/irfan/.config/broot/launcher/bash/br
 
 ### BASH INSULTER ###
 if [ -f /etc/bash.command-not-found ]; then
@@ -241,3 +241,7 @@ eval "$(starship init bash)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
