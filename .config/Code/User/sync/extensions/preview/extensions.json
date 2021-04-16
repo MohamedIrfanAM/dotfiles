@@ -563,6 +563,14 @@
 	},
 	{
 		"identifier": {
+			"id": "kamikillerto.vscode-colorize",
+			"uuid": "445ba381-f232-4150-9056-d790bd76d698"
+		},
+		"version": "0.11.0",
+		"installed": true
+	},
+	{
+		"identifier": {
 			"id": "ms-vscode.cpptools",
 			"uuid": "690b692e-e8a9-493f-b802-8089d50ac1b2"
 		},
@@ -635,7 +643,7 @@
 			"id": "tabnine.tabnine-vscode",
 			"uuid": "75da638c-c45a-44ea-aa3b-8570a3559810"
 		},
-		"version": "3.4.1",
+		"version": "3.4.2",
 		"installed": true
 	},
 	{

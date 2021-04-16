@@ -1122,7 +1122,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "python.showStartPage": false,
   "editor.snippetSuggestions": "bottom",
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "One Dark Pro",
   "cph.language.cpp.Args": "-Wall -Wextra",
   "cph.general.menuChoices": "cpp",
   "cph.general.defaultLanguage": "cpp",

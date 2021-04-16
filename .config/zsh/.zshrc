@@ -1,7 +1,6 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.cache/zsh/history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1000 SAVEHIST=1000
 unsetopt beep
 
 zstyle :compinstall filename '/home/irfan/.config/zsh/.zshrc'
@@ -19,7 +18,7 @@ eval "$(starship init zsh)"
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
-colorscript random
+# colorscript random
 # autoload -U promptinit; promptinit
 # prompt spaceship
 
@@ -234,6 +233,14 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+
+# # configure node version manager
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR=~/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
 
 ### BASH INSULTER ###
 if [ -f /etc/bash.command-not-found ]; then
