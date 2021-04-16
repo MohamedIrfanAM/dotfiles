@@ -95,9 +95,10 @@ mv /run/media/irfan/Programming/cp/Codeforces* /run/media/irfan/Programming/cp/c
 mv /run/media/irfan/Programming/cp/CodeChef*  /run/media/irfan/Programming/cp/codeshef
 mv /run/media/irfan/Programming/cp/At* /run/media/irfan/Programming/cp/atcoder
 mv /run/media/irfan/Programming/cp/Ha* /run/media/irfan/Programming/cp/hackerrank
-rm *.exe
+rm /run/media/irfan/Programming/cp/*.exe
+clear
 }
-alias c="sort ; cd /run/media/irfan/Programming/cp/ ; clear" 
+alias c="sort ; cd /run/media/irfan/Programming/cp/" 
 
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
