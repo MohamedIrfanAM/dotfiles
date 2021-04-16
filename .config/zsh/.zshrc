@@ -89,6 +89,15 @@ case ${TERM} in
     ;;
 esac
 
+function sort
+{
+mv /run/media/irfan/Programming/cp/Codeforces* /run/media/irfan/Programming/cp/codeforces
+mv /run/media/irfan/Programming/cp/CodeChef*  /run/media/irfan/Programming/cp/codeshef
+mv /run/media/irfan/Programming/cp/At* /run/media/irfan/Programming/cp/atcoder
+mv /run/media/irfan/Programming/cp/Ha* /run/media/irfan/Programming/cp/hackerrank
+}
+alias c="sort ; cd /run/media/irfan/Programming/cp/ ; clear" 
+
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -157,6 +166,8 @@ cdls() {
 
 #Vim
 alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
 alias icat="kitty +kitten icat"
 alias cat='bat'
 
@@ -270,3 +281,6 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=#004EFF'
 ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
+
+# For sorting all contest directory 
+/home/irfan/.config/zsh/sort.sh
