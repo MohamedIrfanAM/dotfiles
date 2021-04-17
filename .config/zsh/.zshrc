@@ -158,7 +158,7 @@ cdls() {
         local dir="$1"
         local dir="${dir:=$HOME}"
         if [[ -d "$dir" ]]; then
-                cd "$dir" >/dev/null; exa -al --color=always --group-directories-first 
+                cd "$dir" >/dev/null; exa -l --color=always --group-directories-first 
         else
                 echo "bash: cdls: $dir: Directory not found"
         fi
