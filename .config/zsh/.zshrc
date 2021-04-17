@@ -166,6 +166,8 @@ cdls() {
 
 # Aliases 
 
+# explore
+alias cl="cdls"
 #Vim
 alias vim="nvim"
 alias vi="nvim"
@@ -229,6 +231,7 @@ alias rm='rm -i'
 
 
 # Changing "ls" to "exa"
+alias l='exa -l --color=always --group-directories-first' # my preferred listing
 alias ls='exa -l --color=always --group-directories-first' # my preferred listing
 alias la='exa -al --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
