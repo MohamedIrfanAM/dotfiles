@@ -13,8 +13,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-### SETTING THE STARSHIP PROMPT ###
-eval "$(starship init zsh)"
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
 # Or install it from the Arch User Repository: shell-color-scripts
@@ -284,3 +282,5 @@ ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 
 # For sorting all contest directory 
  /home/irfan/.config/zsh/sort.sh
+### SETTING THE STARSHIP PROMPT ###
+eval "$(starship init zsh)"
