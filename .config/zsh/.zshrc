@@ -91,18 +91,9 @@ esac
 
 function sort
 {
-  cp -fr /run/media/irfan/Programming/cp/At* /run/media/irfan/Programming/cp/atcoder
-  rm -fr /run/media/irfan/Programming/cp/At* 
-  cp -fr /run/media/irfan/Programming/cp/Ha* /run/media/irfan/Programming/cp/hackerrank
-  rm -fr /run/media/irfan/Programming/cp/Ha* 
-  cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
-  rm -fr /run/media/irfan/Programming/cp/Codef*
-  cp -fr /run/media/irfan/Programming/cp/CodeShef* /run/media/irfan/Programming/cp/codechef
-  rm -fr /run/media/irfan/Programming/cp/CodeShef*  
-  rm -fr /run/media/irfan/Programming/cp/*.exe
-  clear
+  /home/irfan/.config/zsh/sort.sh
 }
-alias c="sort ; cd /run/media/irfan/Programming/cp/" 
+alias c="sort ; cd /run/media/irfan/Programming/cp/ && ls" 
 
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
@@ -292,4 +283,4 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 
 # For sorting all contest directory 
-# /home/irfan/.config/zsh/sort.sh
+ /home/irfan/.config/zsh/sort.sh
