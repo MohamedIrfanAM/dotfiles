@@ -99,7 +99,7 @@ then
 fi
 
 rm -fr /run/media/irfan/Programming/cp/*.exe
-
+clear
 }
 alias c="sort ; cd /run/media/irfan/Programming/cp/ && ls" 
 
