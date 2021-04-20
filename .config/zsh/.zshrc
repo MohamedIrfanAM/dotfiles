@@ -89,7 +89,17 @@ esac
 
 function sort
 {
-  /home/irfan/.config/zsh/sort.sh
+  # /home/irfan/.config/zsh/sort.sh
+
+mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces || command_failed=1
+if [ ${command_failed} -eq 1 ]
+then
+  cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
+  rm -fr /run/media/irfan/Programming/cp/Codef*
+fi
+
+rm -fr /run/media/irfan/Programming/cp/*.exe
+
 }
 alias c="sort ; cd /run/media/irfan/Programming/cp/ && ls" 
 

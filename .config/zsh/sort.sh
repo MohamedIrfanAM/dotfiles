@@ -1,10 +1,12 @@
 #! /bin/bash
-mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces || command_failed=1
-if [ ${command_failed} -eq 1 ]
-then
-  cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
-  rm -fr /run/media/irfan/Programming/cp/Codef*
-fi
+
+mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces 
+# mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces || command_failed=1
+# if [ ${command_failed} -eq 1 ]
+# then
+#   cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
+#   rm -fr /run/media/irfan/Programming/cp/Codef*
+# fi
 
 
 # mv /run/media/irfan/Programming/cp/Ha* /run/media/irfan/Programming/cp/hackerrank/ || cmmand_failed=1
