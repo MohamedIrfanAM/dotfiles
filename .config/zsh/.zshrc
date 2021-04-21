@@ -97,7 +97,7 @@ then
   cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
   rm -fr /run/media/irfan/Programming/cp/Codef*
 fi
-
+mmv -r /run/media/irfan/Programming/cp/codeforces/Codeforces-Codeforces\* \#1
 rm -fr /run/media/irfan/Programming/cp/*.exe
 clear
 }
