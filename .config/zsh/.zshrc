@@ -98,6 +98,7 @@ then
   rm -fr /run/media/irfan/Programming/cp/Codef*
 fi
 mmv -r /run/media/irfan/Programming/cp/codeforces/Codeforces-Codeforces\* \#1
+mmv -r /run/media/irfan/Programming/cp/codeforces/'*ound[0-9]**[0-9]Div*' '#1ound_#2#3#4#5_Div#6' 
 rm -fr /run/media/irfan/Programming/cp/*.exe
 clear
 }
