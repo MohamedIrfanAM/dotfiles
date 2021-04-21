@@ -102,7 +102,7 @@ mmv -r /run/media/irfan/Programming/cp/codeforces/'*ound[0-9]**[0-9]Div*' '#1oun
 rm -fr /run/media/irfan/Programming/cp/*.exe
 clear
 }
-alias c="sort ; cd /run/media/irfan/Programming/cp/ && ls" 
+alias c="sort ; cd /run/media/irfan/Programming/cp/ ; ls" 
 
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
