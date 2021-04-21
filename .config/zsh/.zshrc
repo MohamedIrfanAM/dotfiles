@@ -291,7 +291,7 @@ ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 
-# For sorting all contest directory 
- /home/irfan/.config/zsh/sort.sh
+# # For sorting all contest directory 
+#  /home/irfan/.config/zsh/sort.sh
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
