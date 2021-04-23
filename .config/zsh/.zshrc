@@ -91,12 +91,12 @@ function sort
 {
   # /home/irfan/.config/zsh/sort.sh
 
-# mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces || command_failed=1
-# if [ ${command_failed} -eq 1 ]
-# then
+mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces || command_failed=1
+if [ ${command_failed} -eq 1 ]
+then
   cp -fr /run/media/irfan/Programming/cp/Codef* /run/media/irfan/Programming/cp/codeforces
   rm -fr /run/media/irfan/Programming/cp/Codef*
-# fi
+fi
 mmv -r /run/media/irfan/Programming/cp/codeforces/Codeforces-Codeforces\* \#1
 mmv -r /run/media/irfan/Programming/cp/codeforces/'*ound[0-9]**[0-9]Div*' '#1ound_#2#3#4#5_Div#6' 
 rm -fr /run/media/irfan/Programming/cp/*.exe
