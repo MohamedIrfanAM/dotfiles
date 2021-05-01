@@ -175,7 +175,6 @@ alias cl="cdls"
 #Vim
 alias vim="nvim"
 alias vi="nvim"
-alias v="nvim"
 alias icat="kitty +kitten icat"
 alias cat='bat'
 
@@ -295,3 +294,10 @@ ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 #  /home/irfan/.config/zsh/sort.sh
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
+### Setting fasd
+eval "$(fasd --init auto)"
+# alias for fasd
+source /home/irfan/.config/zsh/plugins/fzfz.zsh 
+alias v='f -e nvim' # quick opening files with vim
+alias m='f -e mplayer' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
