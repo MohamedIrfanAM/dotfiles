@@ -52,7 +52,7 @@ bindkey -v '^?' backward-delete-char
 # echo -ne '\e[5 q' # Use beam shape cursor on startup.
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-bindkey -s '^o' 'ranger\n'
+# bindkey -s '^o' 'ranger\n'
 # /usr/share/fzf/completion.zsh
 # /usr/share/fzf/key-bindings.zsh
 
@@ -158,6 +158,20 @@ function mkcd {
   fi
 }
 
+fz() 
+{
+  filepath=$(fd -H . | fzf); 
+  if [ -d $filepath ]; then
+    cd $filepath; 
+  else
+    # nvim $filepath
+    xdg-open $filepath
+  fi
+}
+bindkey -s '^o' 'fz\n'
+
+export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --border=sharp --inline-info --margin 1% --padding 1% --color="border:#53adcb" --preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 cdls() {
         local dir="$1"
         local dir="${dir:=$HOME}"
@@ -172,6 +186,7 @@ cdls() {
 
 # explore
 alias cl="cdls"
+alias lf="ranger" # ctrl + o to open fz
 #Vim
 alias vim="nvim"
 alias vi="nvim"
@@ -234,11 +249,11 @@ alias rm='rm -i'
 
 
 # Changing "ls" to "exa"
-alias l='exa -l --color=always --group-directories-first' # my preferred listing
-alias ls='exa -l --color=always --group-directories-first' # my preferred listing
-alias la='exa -al --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l='exa  --icons --color=always --group-directories-first' # my preferred listing
+alias ls='exa --icons --color=always --group-directories-first' # my preferred listing
+alias la='exa -al --icons --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --icons --color=always --group-directories-first'  # long format
+alias lt='exa -aT --icons --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # Get fastest mirrors 
@@ -294,10 +309,14 @@ ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 #  /home/irfan/.config/zsh/sort.sh
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
+
 ### Setting fasd
 eval "$(fasd --init auto)"
+# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/fzf-z.plugin.zsh
+# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/fzfz
+# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/recentdirs.sh 
+# source /home/irfan/.config/zsh/plugins/fzfz.zsh 
 # alias for fasd
-source /home/irfan/.config/zsh/plugins/fzfz.zsh 
 alias v='f -e nvim' # quick opening files with vim
-alias m='f -e mplayer' # quick opening files with mplayer
+alias m='f -e mpv' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open

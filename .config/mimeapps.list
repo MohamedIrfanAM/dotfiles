@@ -1,0 +1,22 @@
+[Added Associations]
+application/json=nvim.desktop;firefox.desktop;org.kde.kate.desktop;okularApplication_txt.desktop;VScode.desktop;visual-studio-code.desktop;micro.desktop;
+application/x-desktop=org.kde.kate.desktop;visual-studio-code.desktop;okularApplication_txt.desktop;VScode.desktop;micro.desktop;nvim.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/plain=nvim.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+
+[Default Applications]
+application/json=nvim.desktop;
+application/x-desktop=org.kde.kate.desktop;
+inode/directory=org.kde.dolphin.desktop;
+text/plain=nvim.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+text/html=brave-browser.desktop
+audio/mpeg=mpv.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=sxiv.desktop
+image/jpg=sxiv.desktop
+image/png=sxiv.desktop
+video/mp4=mpv.desktop
