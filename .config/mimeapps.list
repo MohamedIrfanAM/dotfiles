@@ -20,3 +20,4 @@ image/jpeg=sxiv.desktop
 image/jpg=sxiv.desktop
 image/png=sxiv.desktop
 video/mp4=mpv.desktop
+inode/x-empty=nvim.desktop
