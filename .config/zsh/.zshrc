@@ -13,52 +13,12 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-# Or install it from the Arch User Repository: shell-color-scripts
-# colorscript random
-# autoload -U promptinit; promptinit
-# prompt spaceship
-
-# # vi mode
-# bindkey -v
-# export KEYTIMEOUT=1
-
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-# # Change cursor shape for different vi modes.
-# function zle-keymap-select {
-#   if [[ ${KEYMAP} == vicmd ]] ||
-#      [[ $1 = 'block' ]]; then
-#     echo -ne '\e[1 q'
-#   elif [[ ${KEYMAP} == main ]] ||
-#        [[ ${KEYMAP} == viins ]] ||
-#        [[ ${KEYMAP} = '' ]] ||
-#        [[ $1 = 'beam' ]]; then
-#     echo -ne '\e[5 q'
-#   fi
-# }
-# zle -N zle-keymap-select
-# zle-line-init() {
-#     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-#     echo -ne "\e[5 q"
-# }
-# zle -N zle-line-init
-# echo -ne '\e[5 q' # Use beam shape cursor on startup.
-# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# bindkey -s '^o' 'ranger\n'
-# /usr/share/fzf/completion.zsh
-# /usr/share/fzf/key-bindings.zsh
-
-# # Edit line in vim with ctrl-e:
-# autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
 
 
 # If not running interactively, don't do anything
@@ -170,6 +130,7 @@ bindkey -s '^o' 'fz\n'
 
 export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --border=sharp --inline-info --margin 1% --padding 1% --color="border:#53adcb" --preview "bat --style=numbers --color=always --line-range :500 {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
 cdls() {
         local dir="$1"
         local dir="${dir:=$HOME}"
@@ -190,6 +151,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias icat="kitty +kitten icat"
 alias cat='bat'
+
+# alias for fasd
+alias v='f -e nvim' # quick opening files with vim
+alias m='f -e mpv' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # Replace some more things with better alternatives
 [ ! -x /usr/bin/bat ] && [ -x /usr/bin/cat ] && alias cat='bat'
@@ -303,18 +269,8 @@ ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#66FF00'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#004EFF'
 
-# # For sorting all contest directory 
-#  /home/irfan/.config/zsh/sort.sh
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
 
 ### Setting fasd
 eval "$(fasd --init auto)"
-# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/fzf-z.plugin.zsh
-# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/fzfz
-# source /home/irfan/.config/zsh/plugins/zsh-fzf-z/recentdirs.sh 
-# source /home/irfan/.config/zsh/plugins/fzfz.zsh 
-# alias for fasd
-alias v='f -e nvim' # quick opening files with vim
-alias m='f -e mpv' # quick opening files with mplayer
-alias o='a -e xdg-open' # quick opening files with xdg-open
