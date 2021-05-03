@@ -52,7 +52,8 @@ function sort
 # /home/irfan/.config/zsh/sort.sh # we can include this if use platforms other than codeforces
 mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces 
 mmv -r /run/media/irfan/Programming/cp/codeforces/Codeforces-Codeforces\* \#1
-cd /run/media/irfan/Programming/cp/codeforces/ && perl-rename 's/Round(\d+)Div\.(\d+)/Round_$1_Div\.$2/' */* && rm -fr /run/media/irfan/Programming/cp/codeforces/*ound[0-9]**[0-9]Di*
+cd /run/media/irfan/Programming/cp/codeforces/ && perl-rename 's/Round(\d+)Div\.(\d+)/Round_$1_Div\.$2/' */* && rmdir /run/media/irfan/Programming/cp/codeforces/*ound[0-9]**[0-9]Di*
+perl-rename 's/Round(\d+)/Round_$1/' */* && rmdir *ound[0-9]*
 cd -
 # mmv -r /run/media/irfan/Programming/cp/codeforces/'*ound[0-9]**[0-9]Div*' '#1ound_#2#3#4#5_Div#6' 
 rm -fr /run/media/irfan/Programming/cp/*.exe
@@ -125,6 +126,8 @@ fz()
     xdg-open $filepath
     # o $filepath
   fi
+  cd -
+  
 }
 bindkey -s '^o' 'fz\n'
 
