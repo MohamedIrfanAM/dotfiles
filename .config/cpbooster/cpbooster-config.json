@@ -1,10 +1,12 @@
 {
   "contestsDirectory": "/run/media/irfan/Programming/cp/",
   "port": 1327,
-  "editor": "nvim",
-  "terminal": "kitty",
+  "editor": "kitty nvim",
   "closeAfterClone": true,
-  "showStatusPageOnSubmit": false,
+  "showStatusPageOnSubmit": true,
+  "useUserDefaultBrowser": true,
+  "hideTestCaseInput": false,
+  "cloneInCurrentDir": false,
   "preferredLang": "cpp",
   "languages": {
     "cpp": {
@@ -14,7 +16,9 @@
       "aliases": {
         "codeforces": "54",
         "atcoder": "4003"
-      }
+      },
+      "type": "compiled",
+      "commentString": "//"
     },
     "py": {
       "template": "template.py",
