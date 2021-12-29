@@ -1,73 +1,90 @@
+const {
+    aceVimMap,
+    mapkey,
+    imap,
+    imapkey,
+    getClickableElements,
+    vmapkey,
+    map,
+    cmap,
+    addSearchAlias,
+    removeSearchAlias,
+    tabOpenLink,
+    readText,
+    Clipboard,
+    Front,
+    Hints,
+    Visual,
+    RUNTIME
+} = api;
 // an example to create a new mapping `ctrl-y`
-mapkey("<Ctrl-y>", "Show me the money", function () {
-  Front.showPopup(
-    "a well-known phrase uttered by characters in the 1996 film Jerry Maguire (Escape to close)."
-  );
+api.mapkey('<Ctrl-y>', 'Show me the money', function() {
+    Front.showPopup('a well-known phrase uttered by characters in the 1996 film Jerry Maguire (Escape to close).');
 });
 
 // an example to replace `T` with `gt`, click `Default mappings` to see how `T` works.
-map("gt", "T");
+api.map('gt', 'T');
 
 // yf to copy url from current tab
-map("yf", "ya");
+api.map('yf','ya');
 
 // Mapping Tab left and right
-map("J", "E");
-map("K", "R");
+api.map('J', 'E');
+api.map('K', 'R');
 
 // Open tabs, links, history search in new tab
-mapkey("O", "#8Open a URL", function () {
-  Front.openOmnibar({ type: "URLs", extra: "getAllSites" });
-});
+api.mapkey('O', '#8Open a URL', function() {
+    Front.openOmnibar({type: "URLs", extra: "getAllSites"});
+})
 // Open tabs, links, history, searhc in currnet tab
-map("o", "go");
+api.map('o','go')
 
 // Edit current url refresh
-map("ge", ";U");
+api.map('ge',';U');
 
 // Edit current url and open in new tab
-map("gE", ";u");
+api.map('gE',';u')
 
 // History back
-map("H", "S");
+api.map('H','S');
 
 // History forward
-map("L", "D");
+api.map('L','D');
 
 // Ctrl+ jk to cycle through omnibar suggesons
-cmap("<Ctrl-j>", "<Tab>");
-cmap("<Ctrl-k>", "<Shift-Tab>");
+api.cmap('<Ctrl-j>', '<Tab>');
+api.cmap('<Ctrl-k>', '<Shift-Tab>')
 
 // Mapping jk and kj as vim escape keys
-aceVimMap("jk", "<Esc>", "insert");
-aceVimMap("kj", "<Esc>", "insert");
+api.aceVimMap('jk', '<Esc>', 'insert');
+api.aceVimMap('kj', '<Esc>', 'insert');
 
-// Hind on left of the word
+// Hind on left of the word 
 settings.hintAlign = "left";
 
 // F for opening in new tab
-mapkey("F", "#1Open a link in active new tab", function () {
-  Hints.create("", Hints.dispatchMouseClick, { tabbed: true, active: true });
+api.mapkey('F', '#1Open a link in active new tab', function() {
+    Hints.create("", Hints.dispatchMouseClick, {tabbed: true, active: true});
 });
 
 // alt + f for opening multiple links
-mapkey("<Alt-f>", "#1Open multiple links in a new tab", function () {
-  Hints.create("", Hints.dispatchMouseClick, { multipleHits: true });
+api.mapkey('<Alt-f>', '#1Open multiple links in a new tab', function() {
+    Hints.create("", Hints.dispatchMouseClick, {multipleHits: true});
 });
 
 // new tab
-mapkey("t", "#3Open newtab", function () {
-  tabOpenLink("chrome://newtab/");
+api.mapkey('t', '#3Open newtab', function() {
+    tabOpenLink("chrome://newtab/");
 });
 
 // Undo close
-map("u", "X");
+api.map('u','X');
 
 // an example to remove mapkey `Ctrl-i`
-unmap("<Ctrl-i>");
+api.unmap('<Ctrl-i>');
 
 // DuckDuckgo as default search engine
-settings.defaultSearchEngine = "d";
+settings.defaultSearchEngine = "g";
 
 // Increasing stepsize
 settings.scrollStepSize = 100;
@@ -76,64 +93,50 @@ settings.scrollStepSize = 100;
 settings.focusFirstCandidate = true;
 
 //Search tabs with omnibar
-settings.tabsThreshold = 0;
+settings.tabsThreshold = 0; 
 // changing hind characters
-Hints.characters = "asdfghjkl;";
+Hints.characters = 'asdfghjkl;'; 
 
 // ctrl+d and ctrl + u to scroll like vim
-map("<Ctrl-d>", "d");
-map("<Ctrl-u>", "e");
+api.map('<Ctrl-d>','d');
+api.map('<Ctrl-u>','e');
 
 // P to open url from clipboard in new tab
-mapkey(
-  "P",
-  "#7Open selected link or link from clipboard in new tab",
-  function () {
+api.mapkey('P', '#7Open selected link or link from clipboard in new tab', function() {
     if (window.getSelection().toString()) {
-      tabOpenLink(window.getSelection().toString());
+        tabOpenLink(window.getSelection().toString());
     } else {
-      Clipboard.read(function (response) {
-        tabOpenLink(response.data);
-      });
+        Clipboard.read(function(response) {
+            tabOpenLink(response.data);
+        });
     }
-  }
-);
+});
 
 // p to open url from clipboard in cureent tab
-mapkey(
-  "p",
-  "#7Open selected link or link from clipboard in current tab",
-  function () {
+api.mapkey('p', '#7Open selected link or link from clipboard in current tab', function() {
     if (window.getSelection().toString()) {
-      window.location.href = window.getSelection().toString();
+        window.location.href = window.getSelection().toString();
     } else {
-      Clipboard.read(function (response) {
-        window.location.href = response.data;
-      });
+        Clipboard.read(function(response) {
+            window.location.href = response.data;
+        });
     }
-  }
-);
-// Map B for bookmark
-mapkey("b", "#8Open a bookmark in current tab", function () {
-  Front.openOmnibar({ type: "Bookmarks", tabbed: false });
 });
-mapkey("B", "#8Open a bookmark in new tab", function () {
-  Front.openOmnibar({ type: "Bookmarks", tabbed: true });
+// Map B for bookmark
+api.mapkey('b', '#8Open a bookmark in current tab', function() {
+    Front.openOmnibar(({type: "Bookmarks", tabbed:false}));
+});
+api.mapkey('B', '#8Open a bookmark in new tab', function() {
+    Front.openOmnibar(({type: "Bookmarks", tabbed:true}));
 });
 
 // get out of text field
-imap("kj", "<Esc>");
-0;
-imap("jk", "<Esc>");
+api.imap('kj', "<Esc>");0
+api.imap('jk', "<Esc>");
 
 // custom theme for hinds
-Hints.style(
-  "border: solid 3px #0080FF; color:#efe1eb; background: initial; background-color: #0080FF;"
-);
-Hints.style(
-  "border: solid 3px #0080FF; padding:0px;  background: #0080FF",
-  "text"
-);
+Hints.style('border: solid 3px #0080FF; color:#efe1eb; background: initial; background-color: #0080FF;');
+Hints.style("border: solid 3px #0080FF; padding:0px;  background: #0080FF", "text");
 
 // set theme
 settings.theme = `
