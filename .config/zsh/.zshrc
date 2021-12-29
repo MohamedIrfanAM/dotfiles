@@ -52,8 +52,8 @@ function sort
 
 # Codeforces
 mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces 
-mmv -r /run/media/irfan/Programming/cp/codeforces/Codeforces-Codeforces\* \#1
-mmv -r /run/media/irfan/Programming/cp/codeforces/'Codeforces-EducationalCodeforcesRound*Ratedfor*' 'EducationalRound#1#2'
+mmv -r /run/media/irfan/Programming/cp/codeforces/CodeforcesCodeforces\* \#1
+mmv -r /run/media/irfan/Programming/cp/codeforces/'CodeforcesEducationalCodeforcesRound*Ratedfor*' 'EducationalRound#1#2'
 cd /run/media/irfan/Programming/cp/codeforces/ && perl-rename 's/Round(\d+)Div\.(\d+)/Round_$1_Div\.$2/' */* && rmdir /run/media/irfan/Programming/cp/codeforces/*ound[0-9]**[0-9]Di*
 perl-rename 's/Round(\d+)/Round_$1/' */* && rmdir *ound[0-9]*
 cd -
