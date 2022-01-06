@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=XSession
-Exec=env KDEWM=/usr/bin/awesome /usr/bin/startplasma-x11
-DesktopNames=KDE
-Name=Plasma (awesome)
-Comment=Plasma with awesome
-X-KDE-PluginInfo-Version=5.21.3
