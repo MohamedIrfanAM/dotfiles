@@ -74,7 +74,6 @@ rm -fr /run/media/irfan/Programming/cp/*.exe
 clear
 
 }
-alias c="sort ; cd /run/media/irfan/Programming/cp/ ; ls" 
 
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
@@ -158,26 +157,18 @@ cdls() {
                 echo "bash: cdls: $dir: Directory not found"
         fi
 }
-
-mount() {
-  sudo mkdir /run/media/irfan/
-  sudo mkdir /run/media/irfan/Programming
-  sudo mount /dev/sda6 /run/media/irfan/Programming
-}
 # Aliases 
 
 # explore
 alias cl="cdls"
-alias lf="ranger" # ctrl + o to open fz
 #Vim
 alias vim="nvim"
 alias vi="nvim"
-alias icat="kitty +kitten icat"
 alias cat='bat'
 
 # alias for fasd
 alias v='f -e nvim' # quick opening files with vim
-alias m='f -e mpv' # quick opening files with mplayer
+alias m='f -e vlc' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # Replace some more things with better alternatives
