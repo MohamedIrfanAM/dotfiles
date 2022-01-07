@@ -75,6 +75,11 @@ clear
 
 }
 
+wifi ()
+{
+  nmcli con up $1
+}
+
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
