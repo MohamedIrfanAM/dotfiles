@@ -51,6 +51,15 @@ function sort
 {
 
 # Codeforces
+
+solutions=$(find /run/media/irfan/Programming/cp/Codeforces*/*cpp)
+while IFS= read -r solution; do
+  if ! [[ $(diff -d -q -I '^/' -I '^ /' $solution /run/media/irfan/Programming/cp/.cph/template.cpp) ]]; then
+    solution_name=$(echo $solution | sed -e 's/.cpp//')
+    rm -fr $solution_name*
+  fi
+done <<< "$solutions"
+
 mv /run/media/irfan/Programming/cp/Codeforc* /run/media/irfan/Programming/cp/codeforces 
 mmv -r /run/media/irfan/Programming/cp/codeforces/CodeforcesCodeforces\* \#1
 mmv -r /run/media/irfan/Programming/cp/codeforces/'CodeforcesEducationalCodeforcesRound*Ratedfor*' 'EducationalRound#1#2'
