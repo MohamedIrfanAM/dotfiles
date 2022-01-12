@@ -47,6 +47,9 @@ case ${TERM} in
     ;;
 esac
 
+# Stack size for c++ 
+ulimit -s unlimited
+
 function sort
 {
 
