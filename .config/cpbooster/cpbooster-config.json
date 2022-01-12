@@ -10,7 +10,7 @@
   "preferredLang": "cpp",
   "languages": {
     "cpp": {
-      "template": "/run/media/irfan/Programming/cp/.cph/template.cpp",
+      "template": "~/.config/cpbooster/template.cpp",
       "command": "g++ -std=gnu++17 -O2",
       "debugCommand": "g++ -std=gnu++17 -O3 -DIRFAN_DEBUG -g -fsanitize=signed-integer-overflow -fsanitize=bounds-strict -fsanitize=address -fsanitize=integer-divide-by-zero -fsanitize=float-divide-by-zero -fsanitize=pointer-overflow -fsanitize=shift-exponent -fsplit-stack -Wshadow -Wall -fconcepts",
       "aliases": {
