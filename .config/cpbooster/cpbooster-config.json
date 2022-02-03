@@ -1,7 +1,7 @@
 {
   "contestsDirectory": "/run/media/irfan/cp/",
   "port": 1327,
-  "editor": "kitty zsh ~/.config/cpbooster/nvimdir-cpp.sh",
+  "editor": "kitty zsh /run/media/irfan/cp/.utils/scripts/nvimdir-cpp.sh",
   "closeAfterClone": true,
   "showStatusPageOnSubmit": true,
   "useUserDefaultBrowser": true,
