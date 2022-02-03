@@ -36,6 +36,7 @@ set notification-warning-bg "#ebcb8b" # nord13
 set notification-warning-fg "#2e3440" # nord0
 set highlight-color         "#5e81ac" # nord10
 set highlight-active-color  "#88c0d0" # nord8
+set highlight-transparency  0.1
 set index-bg                "#2e3440" # nord0
 set index-fg                "#d8dee9" # nord4
 set index-active-bg         "#434c5e" # nord2
