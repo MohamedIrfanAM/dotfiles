@@ -33,9 +33,9 @@ deleted = "x"
 
 # Last param in the first line/row
 [cmd_duration]
-min_time = 1
+min_time = 2000
 format = "took [$duration]($style)"
-disabled = true
+disabled = false
 
 
 ## SECOND LINE/ROW: Prompt
