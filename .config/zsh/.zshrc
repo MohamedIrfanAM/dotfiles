@@ -72,7 +72,7 @@ function extract {
  else
     for n in "$@"
     do
-      if [ -f "$n" ] ; then
+      if [ j-f "$n" ] ; then
           case "${n%,}" in
             *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
                          tar xvf "$n"       ;;
@@ -142,6 +142,13 @@ cdls() {
                 echo "bash: cdls: $dir: Directory not found"
         fi
 }
+
+cf(){
+  kill $(ps -ef | awk '/ Xvfb :[1-9]+/ {print $2}')
+  cd /home/irfan/cp/.utils/scripts
+  cpb clone & python autoclone-selenium.py $1 $2
+}
+
 # Aliases 
 
 # explore
