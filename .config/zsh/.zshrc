@@ -72,7 +72,7 @@ function extract {
  else
     for n in "$@"
     do
-      if [ j-f "$n" ] ; then
+      if [ -f "$n" ] ; then
           case "${n%,}" in
             *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
                          tar xvf "$n"       ;;
