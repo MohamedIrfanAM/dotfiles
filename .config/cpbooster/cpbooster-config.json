@@ -1,18 +1,19 @@
 {
-  "contestsDirectory": "/run/media/irfan/cp/",
+  "contestsDirectory": "D:\\cp",
   "port": 1327,
-  "editor": "kitty zsh /run/media/irfan/cp/.utils/scripts/nvimdir-cpp.sh",
+  "editor": "neovide",
   "closeAfterClone": true,
   "showStatusPageOnSubmit": true,
   "useUserDefaultBrowser": true,
   "hideTestCaseInput": false,
   "cloneInCurrentDir": false,
   "preferredLang": "cpp",
+  "executableFileExtension":"exe",
   "languages": {
     "cpp": {
-      "template": "/run/media/irfan/cp/.utils/template.cpp",
-      "command": "g++ -std=gnu++17",
-      "debugCommand": "g++ -std=gnu++17 -O3 -DIRFAN_DEBUG -g -fsanitize=signed-integer-overflow -fsanitize=bounds-strict -fsanitize=address -fsanitize=integer-divide-by-zero -fsanitize=float-divide-by-zero -fsanitize=pointer-overflow -fsanitize=shift-exponent -fsplit-stack -Wshadow -Wall -fconcepts",
+      "template": "D:\\cp\\.utils\\template.cpp",
+      "command": "g++ -std=gnu++17 -DIRFAN_DEBUG",
+      "debugCommand": "g++ -std=gnu++17 -O3 -DIRFAN_DEBUG -g",
       "aliases": {
         "codeforces": "54",
         "atcoder": "4003"
