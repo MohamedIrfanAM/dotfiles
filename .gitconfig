@@ -2,6 +2,6 @@
 	email = i4irfan777@gmail.com
 	name = Mohamed Irfan
 [core]
-	autocrlf = false
+	autocrlf = input
 [pull]
 	ff = only
