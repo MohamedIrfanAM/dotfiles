@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh installation.
+PATH=~/.console-ninja/.bin:$PATH
 ZSH=/usr/share/oh-my-zsh/
 
 # List of plugins used
@@ -207,3 +208,4 @@ function zvm_after_init() {
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
+
