@@ -1,0 +1,4 @@
+{
+  "darkplus.nvim": { "branch": "master", "commit": "2d4a3139a5a6a8f9992954df51f18b48459050dd" },
+  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" }
+}
