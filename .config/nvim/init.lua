@@ -1,3 +1,5 @@
+require "irfan.spec"
 require "irfan.options"
 require "irfan.keymaps"
+spec    "irfan.colorscheme"
 require "irfan.lazy"
