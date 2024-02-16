@@ -1,9 +1,10 @@
-# Path to your oh-my-zsh installation.
+# Console ninja path
 PATH=~/.console-ninja/.bin:$PATH
+# Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
 # List of plugins used
-plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode zsh-abbr)
 source $ZSH/oh-my-zsh.sh
 
 # In case a command is not found, try to find the package that has it
@@ -41,6 +42,8 @@ function in {
         "$aurhelper" -S "$pkg"
     fi
 }
+
+## ntfs filesystem fix
 
 
 
@@ -161,13 +164,6 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 [ ! -x /usr/bin/bat ] && [ -x /usr/bin/cat ] && alias cat='bat'
 ### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# Handy change dir shortcuts
-#abbr .. 'cd ..'
-#abbr ... 'cd ../..'
-#abbr .3 'cd ../../..'
-#abbr .4 'cd ../../../..'
-#abbr .5 'cd ../../../../..'
 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 #abbr mkdir 'mkdir -p'
