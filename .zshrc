@@ -43,10 +43,6 @@ function in {
     fi
 }
 
-## ntfs filesystem fix
-
-
-
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
@@ -126,7 +122,8 @@ fz()
   
 }
 
-function ntfs{
+## NTFS filesystme fix
+function ntfs {
  sudo ntfsfix /dev/nvme0n1p4 
  sudo umount /dev/nvme0n1p4  
  sudo mount /dev/nvme0n1p4 /home/irfan/drive 
