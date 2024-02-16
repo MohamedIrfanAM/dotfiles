@@ -4,7 +4,7 @@ return {
     priority = 1000,
     config = function()
       require('decay').setup({
-        style = 'default',
+        style = 'dark',
         nvim_tree = {
           contrast = true, 
           },
