@@ -54,6 +54,10 @@ keymap("n", "<C-e>", ":NvimTreeToggle<cr>",opts)
 keymap("n", "<C-s>", ":w><cr>",opts)
 keymap("n", "<C-a>", "mZgg0yG`Z",opts)
 
+-- Center kemaps -- 
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
