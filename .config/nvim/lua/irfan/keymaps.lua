@@ -39,10 +39,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "gx",'<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 keymap("n", "<C-LeftMouse>",'<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 
--- Navigate buffers --
-keymap("n", "<S-k>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<S-j>", ":BufferLineCyclePrev<CR>", opts)
-
 -- CP Booster --
 keymap("n", "<a-t>", ":Test<CR><C-w>l:vertical resize 35<CR><C-w>h", opts)
 keymap("n", "<a-T>", ":Rtest<CR><C-w>l:vertical resize 35<CR><C-w>h", opts)
@@ -53,7 +49,7 @@ keymap("n", "<a-a>", ":Addtc<CR>:vertical resize 35<CR>", opts)
 vim.cmd [[ command! -nargs=1 Include  call feedkeys("mZ") | call timer_start(1, { tid -> execute('26r /home/irfan/cp/.utils/library/<args>.cpp')}) | call timer_start(1, { tid -> execute('call feedkeys("`Z")')}) ]]
 
 -- Standard bindings --
-keymap("n", "<C-w>", ":Bdelete!<CR>",opts)
+keymap("n", "<C-w>", ":bd<CR>",opts)
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>",opts)
 keymap("n", "<C-s>", ":w><cr>",opts)
 keymap("n", "<C-a>", "mZgg0yG`Z",opts)

@@ -17,6 +17,8 @@ function M.config()
     ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
   }
 
+  vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files, {})
+
   local icons = require "irfan.icons"
   local actions = require "telescope.actions"
 

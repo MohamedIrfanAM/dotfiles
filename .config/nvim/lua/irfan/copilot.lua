@@ -13,7 +13,7 @@ function M.config()
       keymap = {
         jump_next = "<c-j>",
         jump_prev = "<c-k>",
-        accept = "<c-l>",
+        accept = "<C-Space>",
         refresh = "r",
         open = "<M-CR>",
       },
@@ -22,10 +22,10 @@ function M.config()
       enabled = true,
       auto_trigger = true,
       keymap = {
-        accept = "<c-l>",
+        accept = "<C-Space>",
         next = "<c-j>",
         prev = "<c-k>",
-        dismiss = "<c-h>",
+        dismiss = "<c-e>",
       },
     },
     filetypes = {

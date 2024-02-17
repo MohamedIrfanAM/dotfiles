@@ -12,9 +12,10 @@ function M.config()
 
   keymap("n", "<s-m>", "<cmd>lua require('irfan.harpoon').mark_file()<cr>", opts)
   keymap("n", "<TAB>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+  keymap("n", "<s-h>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts)
+  keymap("n", "<s-l>", "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts)
   vim.api.nvim_create_autocmd({ "filetype" }, {
-    pattern = "harpoon",
-    callback = function()
+    pattern = "harpoon", callback = function()
       vim.cmd [[highlight link HarpoonBorder TelescopeBorder]]
       -- vim.cmd [[setlocal nonumber]]
       -- vim.cmd [[highlight HarpoonWindow guibg=#313132]]
