@@ -104,7 +104,7 @@ function M.config()
     formatting = {
       fields = { "abbr", "kind" },
       format = function(entry, vim_item)
-        vim_item.kind = vim_item.kind
+        vim_item.kind = icons.kind[vim_item.kind] .. " " .. vim_item.kind
         return vim_item
       end,
     },
