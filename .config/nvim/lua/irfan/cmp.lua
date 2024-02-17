@@ -102,27 +102,9 @@ function M.config()
       }),
     },
     formatting = {
-      fields = { "kind", "abbr", "menu" },
+      fields = { "abbr", "kind" },
       format = function(entry, vim_item)
-        vim_item.kind = icons.kind[vim_item.kind]
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[Nvim]",
-          luasnip = "[LuaSnip]",
-          buffer = "[Buffer]",
-          path = "[Path]",
-        })[entry.source.name]
-
-        if entry.source.name == "emoji" then
-          vim_item.kind = icons.misc.Smiley
-          vim_item.kind_hl_group = "CmpItemKindEmoji"
-        end
-
-        if entry.source.name == "cmp_tabnine" then
-          vim_item.kind = icons.misc.Robot
-          vim_item.kind_hl_group = "CmpItemKindTabnine"
-        end
-
+        vim_item.kind = vim_item.kind
         return vim_item
       end,
     },
