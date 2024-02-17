@@ -9,7 +9,7 @@ function M.config()
     ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>lua require('telescope.builtin').find_files({search_dirs = { '~/' }, hidden=true})<cr>", "Find all files in the home directory files" },
+    ["<leader>ff"] = { "<cmd>lua require('telescope.builtin').find_files({search_dirs = { '~/' }, hidden=true})<cr>", "All files" },
     ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
@@ -71,7 +71,7 @@ function M.config()
 
       find_files = {
         theme = "dropdown",
-        previewer = false,
+        previewer = true,
       },
 
       buffers = {
