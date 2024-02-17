@@ -3,5 +3,6 @@
 	name = Mohamed Irfan
 [core]
 	autocrlf = input
+	editor = nvim
 [pull]
 	ff = only
