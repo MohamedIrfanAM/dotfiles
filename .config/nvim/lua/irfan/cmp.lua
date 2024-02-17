@@ -7,10 +7,6 @@ local M = {
       event = "InsertEnter",
     },
     {
-      "hrsh7th/cmp-emoji",
-      event = "InsertEnter",
-    },
-    {
       "hrsh7th/cmp-buffer",
       event = "InsertEnter",
     },
@@ -45,8 +41,6 @@ function M.config()
   require("luasnip/loaders/from_vscode").lazy_load()
 
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-  vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
-  vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -117,8 +111,6 @@ function M.config()
           luasnip = "[LuaSnip]",
           buffer = "[Buffer]",
           path = "[Path]",
-          emoji = "[Emoji]",
-          cmp_tabnine = "[Tabnine]",
         })[entry.source.name]
 
         if entry.source.name == "emoji" then
@@ -138,12 +130,10 @@ function M.config()
       { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
-      { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "buffer" },
       { name = "path" },
       { name = "calc" },
-      { name = "emoji" },
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
