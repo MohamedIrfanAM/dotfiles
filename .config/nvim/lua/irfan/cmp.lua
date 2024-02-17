@@ -118,6 +118,7 @@ function M.config()
           buffer = "[Buffer]",
           path = "[Path]",
           emoji = "[Emoji]",
+          cmp_tabnine = "[Tabnine]",
         })[entry.source.name]
 
         if entry.source.name == "emoji" then
