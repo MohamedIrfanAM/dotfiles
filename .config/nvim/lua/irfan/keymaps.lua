@@ -59,10 +59,6 @@ keymap("n", "<C-a>", "mZgg0yG`Z",opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
--- fl and lf for right arrow
-keymap("i","fl","<right>",opts);
-keymap("i","lf","<right>",opts);
-
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
