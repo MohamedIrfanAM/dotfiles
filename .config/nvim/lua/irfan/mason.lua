@@ -2,20 +2,23 @@ local M = {
   "williamboman/mason-lspconfig.nvim",
   dependencies = {
     "williamboman/mason.nvim",
+    "nvim-lua/plenary.nvim",
   },
 }
 
-
-function M.config()
-  local servers = {
+M.execs= {
     "lua_ls",
     "cssls",
     "html",
     "tsserver",
-    "pyright",
+    "tailwindcss",
+    "eslint",
+    "prettierd",
     "bashls",
     "jsonls",
   }
+
+function M.config()
 
   require("mason").setup {
     ui = {
@@ -24,7 +27,7 @@ function M.config()
   }
 
   require("mason-lspconfig").setup {
-    ensure_installed = servers,
+    ensure_installed = M.execs
   }
 end
 
