@@ -6,7 +6,8 @@ local M = {
   },
 }
 
-M.execs= {
+function M.config()
+  local servers = {
     "lua_ls",
     "cssls",
     "html",
@@ -18,8 +19,6 @@ M.execs= {
     "jsonls",
   }
 
-function M.config()
-
   require("mason").setup {
     ui = {
       border = "rounded",
@@ -27,7 +26,7 @@ function M.config()
   }
 
   require("mason-lspconfig").setup {
-    ensure_installed = M.execs
+    ensure_installed = servers
   }
 end
 

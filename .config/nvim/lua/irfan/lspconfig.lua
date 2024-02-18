@@ -71,11 +71,10 @@ function M.config()
     "html",
     "tsserver",
     "eslint",
-    "tsserver",
-    "pyright",
+    "tailwindcss",
+    "prettierd",
     "bashls",
     "jsonls",
-    "yamlls",
   }
 
   local default_diagnostic_config = {
