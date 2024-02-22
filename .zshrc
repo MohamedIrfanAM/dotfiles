@@ -1,5 +1,6 @@
 # Console ninja path
 PATH=~/.console-ninja/.bin:$PATH
+export PATH="$PATH:/home/irfan/.local/bin"
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
