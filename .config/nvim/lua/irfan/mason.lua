@@ -16,6 +16,7 @@ function M.config()
 		"eslint",
 		"bashls",
 		"jsonls",
+		"gopls",
 	}
 
 	require("mason").setup({

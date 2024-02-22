@@ -74,6 +74,7 @@ function M.config()
 		"tailwindcss",
 		"bashls",
 		"jsonls",
+		"gopls",
 	}
 
 	local default_diagnostic_config = {
