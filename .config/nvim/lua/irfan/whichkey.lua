@@ -35,6 +35,7 @@ function M.config()
       R = { "<cmd>CopilotChatReset<cr>", "Reset chat history and clear buffer" },
     },
 		s = { name = "Search" },
+    u = {"<cmd>lua require('undotree').toggle()<cr>", "Undotree" },
 	}
 
 	local which_key = require("which-key")
