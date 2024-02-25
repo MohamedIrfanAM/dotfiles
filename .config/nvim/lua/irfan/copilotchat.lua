@@ -14,35 +14,23 @@ return {
 		end,
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
-			{ "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
 			{
-				"<leader>ccT",
-				"<cmd>CopilotChatVsplitToggle<cr>",
-				desc = "CopilotChat - Toggle Vsplit", -- Toggle vertical split
-			},
-			{
-				"<leader>ccv",
-				":CopilotChatVisual",
-				mode = "x",
-				desc = "CopilotChat - Open in vertical split",
-			},
-			{
-				"<leader>ccx",
+				"<C-i>",
 				":CopilotChatInPlace<cr>",
-				mode = "x",
+				mode = { "n", "v"},
 				desc = "CopilotChat - Run in-place code",
 			},
-			{
-				"<leader>ccf",
-				"<cmd>CopilotChatFixDiagnostic<cr>", -- Get a fix for the diagnostic message under the cursor.
-				desc = "CopilotChat - Fix diagnostic",
-			},
-			{
-				"<leader>ccr",
-				"<cmd>CopilotChatReset<cr>", -- Reset chat history and clear buffer.
-				desc = "CopilotChat - Reset chat history and clear buffer",
-			},
+      {
+        "<C-S-i>",
+        function()
+          local input = vim.fn.input("Copilot Chat: ")
+          if input ~= "" then
+            vim.cmd("CopilotChatBuffer " .. input)
+          end
+        end,
+        mode = { "n", "v"},
+        desc = "CopilotChat - Quick chat",
+      },
 		},
 	},
 }

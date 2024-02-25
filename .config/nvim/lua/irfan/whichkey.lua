@@ -24,6 +24,16 @@ function M.config()
 			h = { "<cmd>-tabmove<cr>", "Move Left" },
 			l = { "<cmd>+tabmove<cr>", "Move Right" },
 		},
+    c = {
+      name = "CopilotChat",
+      c = { "<cmd>CopilotChatVsplitToggle<cr>", "Toggle Vsplit" },
+      f = { "<cmd>CopilotChatFixDiagnostic<cr>", "Fix diagnostic" },
+      e = { "<cmd>CopilotChatExplain<cr>", "Explain" },
+      t = { "<cmd>CopilotChatTests<cr>", "Tests" },
+      i = { "<cmd>CopilotChatInPlace<cr>", "Run in-place code" },
+      r = { "<cmd>CopilotChatReview<cr>", "Review code" },
+      R = { "<cmd>CopilotChatReset<cr>", "Reset chat history and clear buffer" },
+    },
 		s = { name = "Search" },
 	}
 
