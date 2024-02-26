@@ -4,6 +4,8 @@ local M = {
 }
 
 function M.config()
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
   local wk = require "which-key"
   wk.register {
     ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
