@@ -1,6 +1,7 @@
 # Console ninja path
 PATH=~/.console-ninja/.bin:$PATH
 export PATH="$PATH:/home/irfan/.local/bin"
+export ANDROID_HOME=/home/irfan/Android/Sdk
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -42,6 +43,16 @@ function in {
     else 
         "$aurhelper" -S "$pkg"
     fi
+}
+
+function android {
+  QT_QPA_PLATFORM=xcb
+  /home/irfan/Android/Sdk/emulator-2/emulator @Pixel_7a_API_33
+}
+
+function android1 {
+  QT_QPA_PLATFORM=xcb
+  /home/irfan/Android/Sdk/emulator-2/emulator @Pixel_3a_API_34_extension_level_7_x86_64
 }
 
 ### Function extract for common file formats ###
