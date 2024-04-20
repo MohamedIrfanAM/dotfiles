@@ -221,3 +221,5 @@ function zvm_after_init() {
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init zsh)"
 
+### SETTING fzf ###
+eval "$(fzf --zsh)"
