@@ -63,7 +63,7 @@ fi
 
 shift $((OPTIND -1))
 step="${2:-5}"
-icodir="~/.config/dunst/icons/vol"
+icodir="/home/irfan/.config/dunst/icons/vol"
 
 case $1 in
     i) pamixer $srce -i ${step}
