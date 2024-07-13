@@ -40,12 +40,12 @@ keymap("n", "gx",'<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach":
 keymap("n", "<C-LeftMouse>",'<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 
 -- CP Booster --
-keymap("n", "<a-t>", ":Test<CR><C-w>l:vertical resize 35<CR><C-w>h", opts)
-keymap("n", "<a-T>", ":Rtest<CR><C-w>l:vertical resize 35<CR><C-w>h", opts)
-keymap("n", "<a-d>", ":Debug<CR><C-\\><C-n>:vertical resize 35<CR>i", opts)
-keymap("n", "<a-D>", ":Rdebug<CR><C-\\><C-n>:vertical resize 35<CR>i", opts)
-keymap("n", "<a-s>", ":Submit<CR><C-w>l:vertical resize 35<CR><C-w>h", opts)
-keymap("n", "<a-a>", ":Addtc<CR>:vertical resize 35<CR>", opts)
+keymap("n", "<a-t>", ":Test<CR><C-w>l:vertical resize 45<CR><C-w>h", opts)
+keymap("n", "<a-T>", ":Rtest<CR><C-w>l:vertical resize 45<CR><C-w>h", opts)
+keymap("n", "<a-d>", ":Debug<CR><C-\\><C-n>:vertical resize 45<CR>i", opts)
+keymap("n", "<a-D>", ":Rdebug<CR><C-\\><C-n>:vertical resize 45<CR>i", opts)
+keymap("n", "<a-s>", ":Submit<CR><C-w>l:vertical resize 45<CR><C-w>h", opts)
+keymap("n", "<a-a>", ":Addtc<CR>:vertical resize 45<CR>", opts)
 vim.cmd [[ command! -nargs=1 Include  call feedkeys("mZ") | call timer_start(1, { tid -> execute('26r /home/irfan/cp/.utils/library/<args>.cpp')}) | call timer_start(1, { tid -> execute('call feedkeys("`Z")')}) ]]
 
 -- Standard bindings --
