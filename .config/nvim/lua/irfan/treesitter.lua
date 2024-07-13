@@ -20,6 +20,7 @@ function M.config()
 			"tsx",
 			"jsonc",
 			"go",
+      "cpp",
 		},
 		highlight = { enable = true },
 		indent = { enable = true },

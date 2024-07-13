@@ -72,6 +72,7 @@ function M.config()
 		"bashls",
 		"jsonls",
 		"gopls",
+    "clangd",
 	}
 
 	local default_diagnostic_config = {
