@@ -1,7 +1,7 @@
 {
-  "contestsDirectory": "/home/irfan/cp",
+  "contestsDirectory": "/home/irfan/drive/cp",
   "port": 1327,
-  "editor": "kitty zsh /home/irfan/cp/.utils/scripts/nvimdir-cpp.sh",
+  "editor": "kitty zsh /home/irfan/drive/cp/.utils/scripts/nvimdir-cpp.sh",
   "closeAfterClone": true,
   "showStatusPageOnSubmit": true,
   "useUserDefaultBrowser": true,
@@ -11,7 +11,7 @@
   "executableFileExtension":"exe",
   "languages": {
     "cpp": {
-      "template": "/home/irfan/cp/.utils/template.cpp",
+      "template": "/home/irfan/drive/cp/.utils/template.cpp",
       "command": "g++ -std=gnu++17 -DIRFAN_DEBUG",
       "debugCommand": "g++ -std=gnu++17 -O3 -DIRFAN_DEBUG -g",
       "aliases": {
