@@ -1,0 +1,19 @@
+[user]
+	email = i4irfan777@gmail.com
+	name = Mohamed Irfan
+[core]
+	autocrlf = input
+	editor = nvim
+[pull]
+	ff = only
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
