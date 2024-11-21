@@ -449,15 +449,15 @@
     timeout = 0
 
 [urgency_low]
-    background = "#7B65A380"
-    foreground = "#DECCFFE6"
-    frame_color = "#7B65A303"
+    background = "#657DA380"
+    foreground = "#CCDFFFE6"
+    frame_color = "#657DA303"
     icon = "/home/irfan/.config/dunst/icons/hyprdots.svg"
     timeout = 5
 
 [urgency_normal]
-    background = "#3A506B80"
-    foreground = "#CCE3FFE6"
-    frame_color = "#3A506B03"
+    background = "#3A4E6B80"
+    foreground = "#CCE0FFE6"
+    frame_color = "#3A4E6B03"
     icon = "/home/irfan/.config/dunst/icons/hyprdots.svg"
     timeout = 5
