@@ -4,6 +4,7 @@
 // sourced from header module //
 
     "layer": "top",
+    "output": [ "*" ],
     "position": "top",
     "mod": "dock",
     "height": 21,
@@ -17,7 +18,7 @@
 
 	"modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","cpu","memory","custom/cpuinfo","custom/gpuinfo","custom/r_end","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/updates","custom/keybindhint","custom/r_end","custom/l_end","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/theme","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","cpu","memory","custom/cpuinfo","custom/gpuinfo","custom/r_end","custom/l_end","backlight","network","pulseaudio","pulseaudio#microphone","custom/updates","custom/keybindhint","custom/r_end","custom/l_end","privacy","tray","battery","custom/r_end","custom/l_end","custom/wallchange","custom/theme","custom/wbar","custom/cliphist","custom/power","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -40,25 +41,30 @@
         "rotate": 0,
         "separate-outputs": true,
         "rewrite": {
-            "irfan@MCruizer:(.*)": "$1 ",
+            "(.*)irfan@MCruizer:(.*)": "$1  :$2",
             "(.*) — Mozilla Firefox": "$1 󰈹",
-            "(.*)Mozilla Firefox": "Firefox 󰈹",
+            "(.*)Mozilla Firefox": "$1 Firefox 󰈹",
             "(.*) - Visual Studio Code": "$1 󰨞",
-            "(.*)Visual Studio Code": "Code 󰨞",
+            "(.*)Visual Studio Code": "$1 Code 󰨞",
             "(.*) — Dolphin": "$1 󰉋",
-            "(.*)Spotify": "Spotify 󰓇",
-            "(.*)Steam": "Steam 󰓓"
+            "(.*)Spotify.*": "$1 Spotify 󰓇",
+            "(.*)Steam": "$1 Steam 󰓓",
+            "(.*) - Discord": "$1  ",
+            "(.*?)-\\s*YouTube(.*)": "$1󰗃", 
+            "(.*?\\s)YouTube(.*)": "$1YouTube 󰗃"
         },
-        "max-length": 1000
+        "max-length": 50
     },
 
     "idle_inhibitor": {
         "format": "{icon}",
         "rotate": 0,
         "format-icons": {
-            "activated": "󰥔",
-            "deactivated": ""
-        }
+            "activated": "",
+            "deactivated": "󰛊"
+        },
+        "tooltip-format-activated":"Caffeine Mode Active",
+        "tooltip-format-deactivated":"Caffeine Mode Inactive"
     },
 
     "clock": {
@@ -113,17 +119,17 @@
     },
 
     "custom/cpuinfo": {
-        "exec": " cpuinfo.sh",
+        "exec": "NO_EMOJI=1 cpuinfo.sh",
         "return-type": "json",
         "format": "{}",
         "rotate": 0,
-        "interval": 5, // once every 5 seconds
+        "restart-interval": 5, // once every 5 seconds
         "tooltip": true,
         "max-length": 1000
     },
 
     "custom/gpuinfo": {
-        "exec": " gpuinfo.sh",
+        "exec": "NO_EMOJI=1 gpuinfo.sh",
         "return-type": "json",
         "format": "{}",
         "rotate": 0,
@@ -134,7 +140,7 @@
     },
 
     "custom/gpuinfo#nvidia": {
-        "exec": " gpuinfo.sh --use nvidia ",
+        "exec": "NO_EMOJI=1 gpuinfo.sh --use nvidia ",
         "return-type": "json",
         "format": "{}",
         "rotate": 0,
@@ -144,7 +150,7 @@
     },
 
     "custom/gpuinfo#amd": {
-        "exec": " gpuinfo.sh --use amd ",
+        "exec": "NO_EMOJI=1 gpuinfo.sh --use amd ",
         "return-type": "json",
         "format": "{}",
         "rotate": 0,
@@ -154,7 +160,7 @@
     },
 
     "custom/gpuinfo#intel": {
-        "exec": " gpuinfo.sh --use intel ",
+        "exec": "NO_EMOJI=1 gpuinfo.sh --use intel ",
         "return-type": "json",
         "format": "{}",
         "rotate": 0,
@@ -168,8 +174,8 @@
         "rotate": 0,
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "brightnesscontrol.sh i 1",
+        "on-scroll-down": "brightnesscontrol.sh d 1",
         "min-length": 6
     },
 
@@ -233,8 +239,27 @@
     },
     "custom/keybindhint": {
         "format": " ",
+        "tooltip-format": " Keybinds",
         "rotate": 0,
         "on-click": "keybinds_hint.sh"
+    },
+
+    "privacy": {
+        "icon-size": 12,
+        "icon-spacing": 5,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
     },
 
     "tray": {
