@@ -129,13 +129,6 @@ fz()
   
 }
 
-## NTFS filesystme fix
-function ntfs {
- sudo ntfsfix /dev/nvme0n1p4 
- sudo umount /dev/nvme0n1p4  
- sudo mount /dev/nvme0n1p4 /home/irfan/drive 
-}
-
 bindkey -s '^o' 'fz\n'
 export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --border=rounded --inline-info --margin 1% --padding 1% --color="border:#53adcb" --preview "bat --style=numbers --color=always --line-range :500 {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
