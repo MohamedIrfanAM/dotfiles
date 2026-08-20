@@ -105,3 +105,6 @@ bell-features = no-attention
 # New windows open in the current working directory
 macos-option-as-alt = true
 macos-titlebar-style = hidden
+
+# unbind raycast toggle maximise
+keybind = ctrl+opt+cmd+m=unbind
