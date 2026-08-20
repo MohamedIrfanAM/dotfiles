@@ -122,4 +122,5 @@ end)
 hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "r", function()
 	hs.reload()
 end)
+
 hs.alert.show("Directional window focus loaded")
