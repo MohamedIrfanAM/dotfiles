@@ -1,0 +1,107 @@
+# ============================================================
+# Ghostty — One Dark Pro
+# ============================================================
+# ------------------------------------------------------------
+# Font
+# ------------------------------------------------------------
+font-family = JetBrainsMono Nerd Font
+font-size = 13
+# Slightly better readability for terminal work
+font-thicken = true
+# ------------------------------------------------------------
+# Window
+# ------------------------------------------------------------
+# One Dark Pro background
+background = #282c34
+foreground = #abb2bf
+# Transparency
+background-opacity = 0.88
+# macOS background blur
+background-blur-radius = 20
+# Don't let the window become completely opaque when focused
+# Keep the same opacity whether focused or unfocused
+unfocused-split-opacity = 1.0
+# Padding
+window-padding-x = 7
+window-padding-y = 2
+window-padding-balance = false
+# macOS window appearance
+macos-titlebar-style = transparent
+window-decoration = true
+# ------------------------------------------------------------
+# Cursor
+# ------------------------------------------------------------
+cursor-color = #528bff
+cursor-style = block
+cursor-style-blink = true
+# ------------------------------------------------------------
+# One Dark Pro ANSI palette
+# ------------------------------------------------------------
+palette = 0=#1e2127
+palette = 1=#e06c75
+palette = 2=#98c379
+palette = 3=#e5c07b
+palette = 4=#61afef
+palette = 5=#c678dd
+palette = 6=#56b6c2
+palette = 7=#abb2bf
+palette = 8=#5c6370
+palette = 9=#e06c75
+palette = 10=#98c379
+palette = 11=#e5c07b
+palette = 12=#61afef
+palette = 13=#c678dd
+palette = 14=#56b6c2
+palette = 15=#ffffff
+# ------------------------------------------------------------
+# Selection
+# ------------------------------------------------------------
+selection-background = #3e4451
+selection-foreground = #ffffff
+# ------------------------------------------------------------
+# Shell
+# ------------------------------------------------------------
+shell-integration = detect
+# Selection
+# ------------------------------------------------------------
+
+selection-background = #3e4451
+selection-foreground = #ffffff
+
+# ------------------------------------------------------------
+# Shell
+# ------------------------------------------------------------
+
+shell-integration = detect
+
+# ------------------------------------------------------------
+# Clipboard
+# ------------------------------------------------------------
+
+copy-on-select = false
+
+# ------------------------------------------------------------
+# Scrollback
+# ------------------------------------------------------------
+
+scrollback-limit = 10000
+
+# ------------------------------------------------------------
+# Mouse
+# ------------------------------------------------------------
+
+mouse-hide-while-typing = true
+
+# ------------------------------------------------------------
+# Bell
+# ------------------------------------------------------------
+
+bell-features = no-attention
+
+# ------------------------------------------------------------
+# macOS
+# ------------------------------------------------------------
+
+# New windows open in the current working directory
+macos-option-as-alt = true
+macos-titlebar-style = hidden
