@@ -1,0 +1,28 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+l",
+        "command": "-extension.vim_navigateCtrlL",
+        "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "-extension.vim_ctrl+left",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-notebook.centerActiveCell",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-extension.vim_ctrl+h",
+        "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-deleteLeft",
+        "when": "textInputFocus"
+    }
+]

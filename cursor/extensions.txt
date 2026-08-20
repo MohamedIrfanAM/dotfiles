@@ -1,0 +1,16 @@
+albert.tabout
+anthropic.claude-code
+anysphere.cursorpyright
+anysphere.remote-containers
+anysphere.remote-ssh
+docker.docker
+golang.go
+hashicorp.terraform
+ms-azuretools.vscode-containers
+ms-azuretools.vscode-docker
+ms-python.black-formatter
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-python-envs
+vscodevim.vim
+zhuangtongfa.material-theme
