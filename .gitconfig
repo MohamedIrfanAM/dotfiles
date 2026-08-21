@@ -1,0 +1,7 @@
+[user]
+	name = irfan.m
+	email = irfan.m@media.net
+[core]
+	pager = bat
+[pager]
+	diff = bat --paging=never --style=plain --language=diff
