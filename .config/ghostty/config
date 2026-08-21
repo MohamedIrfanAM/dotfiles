@@ -33,6 +33,9 @@ window-decoration = true
 cursor-color = #528bff
 cursor-style = block
 cursor-style-blink = true
+# Comet-like cursor trail (kitty-style), from https://github.com/sahaj-b/ghostty-cursor-shaders
+custom-shader = shaders/cursor_tail.glsl
+custom-shader-animation = always
 # ------------------------------------------------------------
 # One Dark Pro ANSI palette
 # ------------------------------------------------------------
