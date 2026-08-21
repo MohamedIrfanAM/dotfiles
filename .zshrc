@@ -110,7 +110,7 @@ compdef k=kubectl
 alias kc-sg='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1b-c1'
 alias kc-eu='kubectx gke_mowx-301015_europe-west1_mowx-euw1b-c1'
 alias kc-sc='kubectx gke_mowx-301015_us-east1_mowx-use1-c1'
-alias kc-or='kubectx gke_mowx-301015_us-west1_mowx-usw1-c1'k
+alias kc-or='kubectx gke_mowx-301015_us-west1_mowx-usw1-c1'
 
 alias kc-sg-artf='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1'
 alias kc-eu-artf='kubectx gke_mowx-301015_europe-west1_mowx-euw1-artf-1'
