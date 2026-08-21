@@ -30,7 +30,7 @@ window-decoration = true
 # ------------------------------------------------------------
 # Cursor
 # ------------------------------------------------------------
-cursor-color = #528bff
+cursor-color = #98c379
 cursor-style = block
 cursor-style-blink = true
 # Comet-like cursor trail (kitty-style), from https://github.com/sahaj-b/ghostty-cursor-shaders
