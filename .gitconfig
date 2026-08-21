@@ -2,6 +2,10 @@
 	name = irfan.m
 	email = irfan.m@media.net
 [core]
-	pager = bat
-[pager]
-	diff = bat --paging=never --style=plain --language=diff
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = One Dark
