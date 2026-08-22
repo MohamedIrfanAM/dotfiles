@@ -45,6 +45,26 @@
         "when": "filesExplorerFocus && !inputFocus"
     },
     {
+        "key": "g g",
+        "command": "list.focusFirst",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+g",
+        "command": "list.focusLast",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+[",
+        "command": "list.focusPageUp",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+]",
+        "command": "list.focusPageDown",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
         "key": "ctrl+j",
         "command": "-workbench.action.togglePanel"
     },
@@ -67,6 +87,21 @@
         "key": "ctrl+l",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "sideBarFocus || filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "editorTextFocus && activeViewlet == 'workbench.view.search'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "editorTextFocus && activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "glass.focusInput",
+        "when": "isGlass && inputFocus && !terminalFocus && !editorTextFocus"
     },
     {
         "key": "ctrl+h",
