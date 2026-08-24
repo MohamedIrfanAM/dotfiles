@@ -112,3 +112,7 @@ macos-titlebar-style = tabs
 keybind = ctrl+opt+cmd+m=unbind
 keybind = ctrl+opt+cmd+shift+h=unbind
 keybind = ctrl+opt+cmd+shift+l=unbind
+
+# send nvim's <leader>ff / <leader>bd instead of relying on <D-p>/<D-w> reaching nvim
+keybind = cmd+p=text:\x1b ff
+keybind = cmd+w=text:\x1b bd

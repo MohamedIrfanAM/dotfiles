@@ -6,7 +6,6 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         { "before": ["<leader>", "e"], "commands": ["workbench.action.toggleSidebarVisibility"] },
         { "before": ["<leader>", "/"], "commands": ["workbench.action.findInFiles"] },
-        { "before": ["<leader>", "f", "f"], "commands": ["workbench.action.quickOpen"] },
         { "before": ["<leader>", "s", "r"], "commands": ["workbench.action.replaceInFiles"] },
         { "before": ["<leader>", "g", "v"], "commands": ["workbench.view.scm"] },
         { "before": ["H"], "commands": ["workbench.action.previousEditor"] },

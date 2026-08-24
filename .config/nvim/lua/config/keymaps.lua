@@ -1,3 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+--
+-- cmd+p (find files) and cmd+w (close buffer) are handled in Ghostty's config,
+-- which sends <leader>ff / <leader>bd instead — terminals don't reliably pass
+-- Cmd-modified keys through as <D-p>/<D-w>.
