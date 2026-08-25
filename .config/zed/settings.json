@@ -7,6 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ui_font_weight": 400.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_family": ".ZedMono",
+  "agent_ui_font_family": ".ZedMono",
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 13.0
+  },
   "cli_default_open_behavior": "existing_window",
   "toolbar": {
     "code_actions": false,
@@ -45,8 +53,8 @@
       "type": "registry"
     }
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 13.0,
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -54,7 +62,7 @@
   },
   // parity with nvim's snacks.nvim picker: show dotfiles/gitignored files
   "file_finder": {
-    "include_ignored": true
+    "include_ignored": "all"
   },
   "search": {
     "include_ignored": true
