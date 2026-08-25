@@ -60,6 +60,16 @@
     }
   },
   {
+    // cmd-k instead of ctrl-enter for the inline assistant; cmd-k was unbound in this exact
+    // context (its Terminal use is terminal::Clear, left untouched since only Editor was asked
+    // for), and the old trigger is unbound below so there's no duplicate/muscle-memory clash
+    "context": "Editor && !agent_diff && !AgentPanel",
+    "bindings": {
+      "cmd-k": "assistant::InlineAssist",
+      "ctrl-enter": null
+    }
+  },
+  {
     // same, scoped to the terminal panel: Zed has no default binding for these keys there
     // (they pass through raw to the shell), so this now claims them instead of the shell -
     // giving up readline-style ctrl-h backspace, ctrl-k kill-line, ctrl-l clear-screen, and
