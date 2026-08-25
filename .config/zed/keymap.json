@@ -1,0 +1,96 @@
+[
+  {
+    // leader binds ported from cursor/settings.json's vim.normalModeKeyBindingsNonRecursive;
+    // scoped to vim-normal-mode-in-editor OR any non-editor/non-terminal focus (project panel,
+    // git panel, etc.) so these also work while the file manager itself is focused
+    "context": "VimControl && !menu || !Editor && !Terminal",
+    "bindings": {
+      // focuses the file explorer if the left dock is showing something else (e.g. git),
+      // and only closes the dock once the explorer itself is already focused
+      "space e": "project_panel::ToggleFocus",
+      "space /": "pane::DeploySearch",
+      "space g v": "git_panel::ToggleFocus",
+      // overrides vim's WindowTop/WindowBottom motions, same trade-off already made in cursor
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      // pane switching from non-editor/non-terminal UI (file manager, git panel, agent
+      // thread list, etc.) back into an editor pane or another panel
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
+    // aliases for cursor's filesExplorerFocus a/r/d binds; Zed's defaults (% new file, shift-r
+    // rename, shift-d delete, g g / shift-g focus first/last, h/l collapse/expand entry) stay
+    // reachable too, except "d" which is repurposed from NewDirectory to Delete below
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      // more specific than the broad rule above, so it wins once focus is confirmed inside the
+      // panel: project_panel::ToggleFocus's own "already focused -> close" check wasn't
+      // reliably tripping here, so force the close explicitly instead
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    // unbound by default in Zed; cursor rebinds this from comment-toggle to terminal-toggle too
+    "bindings": {
+      "ctrl-/": "terminal_panel::Toggle"
+    }
+  },
+  {
+    // tmux-navigator-style pane switching, unconditional inside any editor (both vim insert and
+    // normal mode, and the agent panel's message compose box, which is an Editor too). Same
+    // context as Zed's own built-in "Editor" bindings, so this overrides them: gives up ctrl-h
+    // Backspace, ctrl-j JoinLines, ctrl-k KillRingCut, ctrl-l ScrollCursorCenter everywhere,
+    // not just in vim normal mode.
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      // alias for the default "cmd->" add-selection-to-agent-thread action; overrides
+      // editor::ScrollCursorCenter (vim's "zz" still does the same recenter)
+      "cmd-l": "agent::AddSelectionToThread"
+    }
+  },
+  {
+    // same, scoped to the terminal panel: Zed has no default binding for these keys there
+    // (they pass through raw to the shell), so this now claims them instead of the shell -
+    // giving up readline-style ctrl-h backspace, ctrl-k kill-line, ctrl-l clear-screen, and
+    // ctrl-j as enter inside any shell/tmux session running in the terminal panel.
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      // same alias; "cmd->" already works here too (Zed's terminal supports adding a
+      // selection to the agent thread out of the box)
+      "cmd-l": "agent::AddSelectionToThread"
+    }
+  },
+  {
+    // cmd-p, cmd-shift-p, and every other popup built on the picker component (branch
+    // selector, recent projects, etc.) nest under this context; more specific than the
+    // plain "Editor" context above, so it wins while the popup is open
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    // alias for the git panel's existing stage/unstage toggle (already bound to "space" by
+    // default, and to "x" under vim mode) - "s" was unbound in this context
+    "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositorySelector",
+    "bindings": {
+      "s": "git::ToggleStaged"
+    }
+  }
+]

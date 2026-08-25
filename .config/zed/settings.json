@@ -1,0 +1,75 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cli_default_open_behavior": "existing_window",
+  "toolbar": {
+    "code_actions": false,
+    "selections_menu": true,
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "cursor": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "high",
+        "model": "default",
+        "mode": "auto"
+      },
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  // parity with nvim's snacks.nvim picker: show dotfiles/gitignored files
+  "file_finder": {
+    "include_ignored": true
+  },
+  "search": {
+    "include_ignored": true
+  },
+  // explorer/git on the left like cursor/vscode, agent panel on the right
+  "project_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "group_by": "staging",
+    "tree_view": true,
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "sidebar_side": "right"
+  },
+}
