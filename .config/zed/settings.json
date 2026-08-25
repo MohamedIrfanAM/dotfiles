@@ -37,6 +37,10 @@
     "trust_all_worktrees": true
   },
   "vim_mode": true,
+  "node": {
+    "path": "/opt/homebrew/bin/node",
+    "npm_path": "/opt/homebrew/bin/npm"
+  },
   "agent_servers": {
     "codex-acp": {
       "type": "registry"
