@@ -30,6 +30,9 @@
       "a": "project_panel::NewFile",
       "r": "project_panel::Rename",
       "d": "project_panel::Delete",
+      // default "l" is ExpandSelectedEntry, which no-ops on files (nothing to expand); Open
+      // handles both - toggles directories same as before, and opens files into the editor
+      "l": "project_panel::Open",
       // more specific than the broad rule above, so it wins once focus is confirmed inside the
       // panel: project_panel::ToggleFocus's own "already focused -> close" check wasn't
       // reliably tripping here, so force the close explicitly instead
