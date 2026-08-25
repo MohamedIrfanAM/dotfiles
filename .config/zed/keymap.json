@@ -103,7 +103,10 @@
     // default, and to "x" under vim mode) - "s" was unbound in this context
     "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositorySelector",
     "bindings": {
-      "s": "git::ToggleStaged"
+      "s": "git::ToggleStaged",
+      // default "l" is ExpandSelectedEntry (vim's l -> right arrow), which no-ops on files;
+      // Confirm matches "enter" and opens the diff, same fix as project_panel::Open above
+      "l": "menu::Confirm"
     }
   }
 ]
