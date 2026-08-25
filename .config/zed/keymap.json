@@ -85,7 +85,12 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       // same alias; "cmd->" already works here too (Zed's terminal supports adding a
       // selection to the agent thread out of the box)
-      "cmd-l": "agent::AddSelectionToThread"
+      "cmd-l": "agent::AddSelectionToThread",
+      // default keymap leaves cmd-t unbound in Terminal context, so it falls through to
+      // the global project_symbols::Toggle; override with new-terminal-tab instead.
+      // cmd-w already closes just the active terminal tab by default (Pane::CloseActiveItem
+      // wins over the broader Workspace::CloseActiveDock binding), so no override needed there.
+      "cmd-t": "workspace::NewTerminal"
     }
   },
   {
@@ -96,6 +101,16 @@
     "bindings": {
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    // alias for the default cmd-n new-thread action; cmd-t is unbound in the agent panel by
+    // default (falls through to global project_symbols::Toggle). Covers external-agent threads
+    // too (e.g. Claude Code over ACP), since AcpThread nests under AgentPanel and inherits
+    // whatever AgentPanel doesn't override itself.
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-t": "agent::NewThread"
     }
   },
   {
