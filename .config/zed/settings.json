@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "debugger": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
   "ui_font_weight": 400.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "ui_font_family": ".ZedMono",
@@ -81,6 +87,7 @@
     "dock": "left"
   },
   "agent": {
+    "button": true,
     "dock": "right",
     "sidebar_side": "right",
     // newest Flash-tier Gemini model Zed supports; Pro is paid-only on the free API tier

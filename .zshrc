@@ -26,7 +26,6 @@ alias diff='diff --color=auto'
 alias vim='nvim'
 alias cat='\bat'
 alias bat='\cat'
-alias docker='podman'
 
 #bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
