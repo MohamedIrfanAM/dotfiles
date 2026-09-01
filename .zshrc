@@ -3,6 +3,9 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# local secrets, not tracked in the repo
+[ -f "$HOME/.secrets.zsh" ] && source "$HOME/.secrets.zsh"
+
 . "$HOME/.local/bin/env"
 
 #history 

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "youtrack": {
+      "type": "http",
+      "url": "https://youtrack.internal.media.net/mcp",
+      "headers": {
+        "Authorization": "Bearer ${YOUTRACK_TOKEN}"
+      }
+    }
+  }
+}
