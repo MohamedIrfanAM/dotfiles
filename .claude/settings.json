@@ -2,6 +2,7 @@
   "effortLevel": "high",
   "theme": "dark",
   "editorMode": "vim",
+  "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
       "Bash(kubectl rollout status *)",
