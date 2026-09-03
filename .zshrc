@@ -95,11 +95,11 @@ keu() { kubectl --context=gke_mowx-301015_europe-west1_mowx-euw1b-c1 "$@" }
 ksc() { kubectl --context=gke_mowx-301015_us-east1_mowx-use1-c1 "$@" }
 kor() { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-c1 "$@" }
 
-ksg-artf() { kubectl --context=gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1 "$@" }
-keu-artf() { kubectl --context=gke_mowx-301015_europe-west1_mowx-euw1-artf-1 "$@" }
-ksc-artf() { kubectl --context=gke_mowx-301015_us-east1_mowx-use1-artf-1 "$@" }
-kor-artf() { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-artf-1 "$@" }
-kor-poc()  { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-poc "$@" }
+ksgartf() { kubectl --context=gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1 "$@" }
+keuartf() { kubectl --context=gke_mowx-301015_europe-west1_mowx-euw1-artf-1 "$@" }
+kscartf() { kubectl --context=gke_mowx-301015_us-east1_mowx-use1-artf-1 "$@" }
+korartf() { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-artf-1 "$@" }
+kpoc()  { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-poc "$@" }
 
 source <(kubectl completion zsh)
 # Preserve kubectl's tab-completion on these functions
@@ -109,13 +109,13 @@ compdef kor-artf=kubectl; compdef kor-poc=kubectl
 compdef k=kubectl
 
 # "Switch" — set current context so plain kubectl uses it
-alias kc-sg='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1b-c1'
-alias kc-eu='kubectx gke_mowx-301015_europe-west1_mowx-euw1b-c1'
-alias kc-sc='kubectx gke_mowx-301015_us-east1_mowx-use1-c1'
-alias kc-or='kubectx gke_mowx-301015_us-west1_mowx-usw1-c1'
+alias kcsg='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1b-c1'
+alias kceu='kubectx gke_mowx-301015_europe-west1_mowx-euw1b-c1'
+alias kcsc='kubectx gke_mowx-301015_us-east1_mowx-use1-c1'
+alias kcor='kubectx gke_mowx-301015_us-west1_mowx-usw1-c1'
 
-alias kc-sg-artf='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1'
-alias kc-eu-artf='kubectx gke_mowx-301015_europe-west1_mowx-euw1-artf-1'
-alias kc-sc-artf='kubectx gke_mowx-301015_us-east1_mowx-use1-artf-1'
-alias kc-or-artf='kubectx gke_mowx-301015_us-west1_mowx-usw1-artf-1'
-alias kc-or-poc='kubectx gke_mowx-301015_us-west1_mowx-usw1-poc'
+alias kcsgartf='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1'
+alias kceuartf='kubectx gke_mowx-301015_europe-west1_mowx-euw1-artf-1'
+alias kcscartf='kubectx gke_mowx-301015_us-east1_mowx-use1-artf-1'
+alias kcorartf='kubectx gke_mowx-301015_us-west1_mowx-usw1-artf-1'
+alias kcpoc='kubectx gke_mowx-301015_us-west1_mowx-usw1-poc'
