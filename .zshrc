@@ -104,8 +104,8 @@ kpoc()  { kubectl --context=gke_mowx-301015_us-west1_mowx-usw1-poc "$@" }
 source <(kubectl completion zsh)
 # Preserve kubectl's tab-completion on these functions
 compdef ksg=kubectl; compdef keu=kubectl; compdef ksc=kubectl; compdef kor=kubectl
-compdef ksg-artf=kubectl; compdef keu-artf=kubectl; compdef ksc-artf=kubectl
-compdef kor-artf=kubectl; compdef kor-poc=kubectl
+compdef ksgartf=kubectl; compdef keuartf=kubectl; compdef kscartf=kubectl
+compdef korartf=kubectl; compdef kpoc=kubectl
 compdef k=kubectl
 
 # "Switch" — set current context so plain kubectl uses it
