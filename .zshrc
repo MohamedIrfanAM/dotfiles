@@ -109,13 +109,19 @@ compdef kor-artf=kubectl; compdef kor-poc=kubectl
 compdef k=kubectl
 
 # "Switch" — set current context so plain kubectl uses it
-alias kcsg='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1b-c1'
-alias kceu='kubectx gke_mowx-301015_europe-west1_mowx-euw1b-c1'
-alias kcsc='kubectx gke_mowx-301015_us-east1_mowx-use1-c1'
-alias kcor='kubectx gke_mowx-301015_us-west1_mowx-usw1-c1'
-
-alias kcsgartf='kubectx gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1'
-alias kceuartf='kubectx gke_mowx-301015_europe-west1_mowx-euw1-artf-1'
-alias kcscartf='kubectx gke_mowx-301015_us-east1_mowx-use1-artf-1'
-alias kcorartf='kubectx gke_mowx-301015_us-west1_mowx-usw1-artf-1'
-alias kcpoc='kubectx gke_mowx-301015_us-west1_mowx-usw1-poc'
+# usage: kc {sg|eu|sc|or} [artf]   |   kc poc
+kc() {
+  local region="$1" variant="$2"
+  case "$region" in
+    sg) [[ "$variant" == artf ]] && kubectx gke_mowx-301015_asia-southeast1_mowx-ase1-artf-1 \
+                                  || kubectx gke_mowx-301015_asia-southeast1_mowx-ase1b-c1 ;;
+    eu) [[ "$variant" == artf ]] && kubectx gke_mowx-301015_europe-west1_mowx-euw1-artf-1 \
+                                  || kubectx gke_mowx-301015_europe-west1_mowx-euw1b-c1 ;;
+    sc) [[ "$variant" == artf ]] && kubectx gke_mowx-301015_us-east1_mowx-use1-artf-1 \
+                                  || kubectx gke_mowx-301015_us-east1_mowx-use1-c1 ;;
+    or) [[ "$variant" == artf ]] && kubectx gke_mowx-301015_us-west1_mowx-usw1-artf-1 \
+                                  || kubectx gke_mowx-301015_us-west1_mowx-usw1-c1 ;;
+    poc) kubectx gke_mowx-301015_us-west1_mowx-usw1-poc ;;
+    *) echo "usage: kc {sg|eu|sc|or} [artf] | kc poc" >&2; return 1 ;;
+  esac
+}
