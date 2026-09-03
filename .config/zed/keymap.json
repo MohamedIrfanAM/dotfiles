@@ -9,7 +9,7 @@
       // and only closes the dock once the explorer itself is already focused
       "space e": "project_panel::ToggleFocus",
       "space /": "pane::DeploySearch",
-      "space g v": "git_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
       // overrides vim's WindowTop/WindowBottom motions, same trade-off already made in cursor
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",

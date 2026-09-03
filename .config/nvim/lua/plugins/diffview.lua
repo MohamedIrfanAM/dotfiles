@@ -7,7 +7,7 @@ return {
     cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
     keys = {
       {
-        "<leader>gv",
+        "<leader>g",
         function()
           if next(require("diffview.lib").views) then
             vim.cmd("DiffviewClose")
@@ -17,7 +17,7 @@ return {
         end,
         desc = "Diffview (working tree)",
       },
-      { "<leader>gV", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview File History" },
+      { "<leader>G", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview File History" },
     },
   },
 }
