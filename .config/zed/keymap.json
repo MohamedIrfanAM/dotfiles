@@ -123,5 +123,14 @@
       // Confirm matches "enter" and opens the diff, same fix as project_panel::Open above
       "l": "menu::Confirm"
     }
+  },
+  {
+    // cycle between opened projects in the multi-workspace sidebar; unbound by default in Zed.
+    // "Workspace" matches the context Zed's own multi_workspace bindings (cmd-alt-j etc) use.
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-j": "multi_workspace::NextProject",
+      "ctrl-shift-k": "multi_workspace::PreviousProject"
+    }
   }
 ]

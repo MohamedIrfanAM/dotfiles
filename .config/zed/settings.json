@@ -49,9 +49,15 @@
   },
   "agent_servers": {
     "codex-acp": {
+      "default_config_options": {
+        "mode": "read-only"
+      },
       "type": "registry"
     },
     "cursor": {
+      "default_config_options": {
+        "mode": "agent"
+      },
       "type": "registry"
     },
     "claude-acp": {
