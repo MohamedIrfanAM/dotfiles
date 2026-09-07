@@ -65,6 +65,7 @@
 
       "Bash(git status *)",
       "Bash(git diff *)",
+      "Bash(git -C * diff *)",
       "Bash(git log *)",
       "Bash(git show *)",
       "Bash(git blame *)",
