@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-# Applies the custom Mission Control shortcuts (ctrl+1/2/3/4 desktop switch,
-# ctrl+shift+H/L move space) from symbolichotkeys-custom.plist onto this machine.
+# Applies the custom Mission Control shortcuts (ctrl+1/2/3/4 desktop switch)
+# from symbolichotkeys-custom.plist onto this machine.
+#
+# "Move to Space Left/Right" is intentionally NOT customized here - it's
+# left on its default Ctrl+Left/Right so Hammerspoon can trigger it
+# synthetically (see .hammerspoon/spaces-shared.lua). Don't add it back to
+# this plist unless that default ever changes.
 #
 # Not a symlink: com.apple.symbolichotkeys.plist is owned by cfprefsd, which
 # rewrites the whole file on any pref change and would silently replace a

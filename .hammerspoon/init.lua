@@ -4,6 +4,7 @@
 
 require("window-focus") -- Opt+H/J/K/L directional focus, Opt+Cmd+D diagnostic
 require("window-space") -- Hyper+Shift+H/L move window to adjacent Space, Hyper+Shift+P diagnostic
+require("window-desktop-switch") -- Ctrl+Shift+H/L switch Space on the focused window's screen
 require("window-maximize") -- Cmd+Alt+Ctrl+M toggle maximize/restore
 require("reload") -- Cmd+Alt+Ctrl+R reload config
 

@@ -7,10 +7,12 @@
 -- failure mode. So instead of that API, this simulates the same thing a
 -- human does: hold the window's titlebar down with a synthetic mouse
 -- click and, while still holding, trigger the OS's "move a space"
--- shortcut - the window rides along into the new space. That shortcut
--- is rebound in this repo's macos/symbolichotkeys-custom.plist to
--- Ctrl+Shift+H/L (ids 79/81) instead of the default Ctrl+Left/Right;
--- keep this in sync if that ever changes.
+-- shortcut - the window rides along into the new space. That's the OS
+-- default "Move to Space Left/Right" shortcut, Ctrl+Left/Right (see
+-- spaces-shared.lua) - left un-customized so it stays clear of this
+-- module's own Hyper+Shift+H/L hotkey below.
+local spacesShared = require("spaces-shared")
+
 local function moveFocusedWindowToSpace(direction)
 	local win = hs.window.frontmostWindow()
 	if not win then
@@ -18,30 +20,11 @@ local function moveFocusedWindowToSpace(direction)
 	end
 
 	local screen = win:screen()
-	local spaces = hs.spaces.spacesForScreen(screen)
-	local current = hs.spaces.activeSpaceOnScreen(screen)
-	if not spaces or not current then
-		hs.alert.show("spaces: couldn't read space list for this screen")
-		return
-	end
-
-	local idx
-	for i, id in ipairs(spaces) do
-		if id == current then
-			idx = i
-			break
-		end
-	end
-	if not idx then
-		return
-	end
-
-	local targetIdx = direction == "east" and idx + 1 or idx - 1
-	if targetIdx < 1 or targetIdx > #spaces then
+	local targetSpace = spacesShared.targetSpace(screen, direction)
+	if not targetSpace then
 		hs.alert.show("No space to the " .. (direction == "east" and "right" or "left"))
 		return
 	end
-	local targetSpace = spaces[targetIdx]
 	local f = win:frame()
 
 	-- Directly below the yellow (minimize) button: one traffic-light-spacing
@@ -92,7 +75,7 @@ local function moveFocusedWindowToSpace(direction)
 		hs.timer.usleep(5000)
 	end
 	hs.timer.usleep(15000)
-	hs.eventtap.keyStroke({ "ctrl", "shift" }, direction == "east" and "l" or "h", 0)
+	spacesShared.postSpaceKeystroke(direction)
 
 	hs.timer.waitUntil(function()
 		return hs.spaces.activeSpaceOnScreen(screen) == targetSpace
