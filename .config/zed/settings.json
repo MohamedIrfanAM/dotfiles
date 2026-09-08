@@ -63,7 +63,7 @@
     "claude-acp": {
       "default_config_options": {
         "effort": "high",
-        "model": "default",
+        "model": "opus[1m]",
         "mode": "auto"
       },
       "type": "registry"
@@ -105,7 +105,7 @@
     },
     "inline_assistant_model": {
       "provider": "google",
-      "model": "gemini-3.6-flash"
+      "model": "gemini-3.7-flash"
     }
   },
 }

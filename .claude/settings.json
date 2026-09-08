@@ -1,13 +1,8 @@
 {
-  "effortLevel": "high",
-  "theme": "dark",
-  "editorMode": "vim",
-  "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
       "Bash(kubectl rollout status *)",
       "Bash(kubectl rollout history *)",
-
       "Bash(gcloud container clusters list *)",
       "Bash(gcloud container clusters describe *)",
       "Bash(gcloud container clusters get-credentials *)",
@@ -16,7 +11,6 @@
       "Bash(gcloud container operations list *)",
       "Bash(gcloud container operations describe *)",
       "Bash(gcloud container images list *)",
-
       "Bash(gcloud storage ls *)",
       "Bash(gcloud storage du *)",
       "Bash(gcloud storage cat *)",
@@ -27,12 +21,10 @@
       "Bash(gsutil du *)",
       "Bash(gsutil cat *)",
       "Bash(gsutil stat *)",
-
       "Bash(gcloud secrets list *)",
       "Bash(gcloud secrets describe *)",
       "Bash(gcloud secrets versions list *)",
       "Bash(gcloud secrets versions describe *)",
-
       "Bash(gcloud artifacts repositories list *)",
       "Bash(gcloud artifacts repositories describe *)",
       "Bash(gcloud artifacts docker images list *)",
@@ -40,7 +32,6 @@
       "Bash(gcloud artifacts packages list *)",
       "Bash(gcloud artifacts versions list *)",
       "Bash(gcloud artifacts tags list *)",
-
       "Bash(gcloud compute instances list *)",
       "Bash(gcloud compute instances describe *)",
       "Bash(gcloud compute instances get-serial-port-output *)",
@@ -55,14 +46,12 @@
       "Bash(gcloud compute firewall-rules list *)",
       "Bash(gcloud compute addresses list *)",
       "Bash(gcloud compute operations list *)",
-
       "Bash(gcloud config list *)",
       "Bash(gcloud config get-value *)",
       "Bash(gcloud projects list *)",
       "Bash(gcloud projects describe *)",
       "Bash(gcloud auth list *)",
       "Bash(gcloud components list *)",
-
       "Bash(git status *)",
       "Bash(git diff *)",
       "Bash(git -C * diff *)",
@@ -132,20 +121,21 @@
       "Bash(kubectl run *)",
       "Bash(kubectl debug *)",
       "Bash(kubectl certificate *)",
-
       "Bash(helm install *)",
       "Bash(helm upgrade *)",
       "Bash(helm uninstall *)",
       "Bash(helm rollback *)",
-
       "Bash(terraform apply *)",
       "Bash(terraform destroy *)",
       "Bash(terraform import *)",
       "Bash(terraform state *)",
-
       "Bash(git *)",
-
       "Bash(gcloud *)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "effortLevel": "high",
+  "theme": "dark",
+  "editorMode": "vim",
+  "model": "opus[1m]"
 }
