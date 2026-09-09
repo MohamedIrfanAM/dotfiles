@@ -61,10 +61,16 @@
       "type": "registry"
     },
     "claude-acp": {
+      "favorite_config_option_values": {
+        "model": [
+          "opus[1m]",
+          "sonnet"
+        ]
+      },
       "default_config_options": {
         "effort": "high",
         "model": "opus[1m]",
-        "mode": "auto"
+        "mode": "default"
       },
       "type": "registry"
     }
