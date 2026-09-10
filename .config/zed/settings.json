@@ -70,7 +70,7 @@
       "default_config_options": {
         "effort": "high",
         "model": "opus[1m]",
-        "mode": "default"
+        "mode": "auto"
       },
       "type": "registry"
     }

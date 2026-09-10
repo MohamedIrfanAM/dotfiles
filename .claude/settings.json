@@ -131,6 +131,9 @@
       "Bash(terraform state *)",
       "Bash(git *)",
       "Bash(gcloud *)"
+    ],
+    "additionalDirectories": [
+      "/Users/irfan.m/Desktop/ctx"
     ]
   },
   "enableAllProjectMcpServers": true,

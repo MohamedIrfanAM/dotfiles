@@ -125,3 +125,8 @@ kc() {
     *) echo "usage: kc {sg|eu|sc|or} [artf] | kc poc" >&2; return 1 ;;
   esac
 }
+
+# --- Claude context store -------------------------------------------------
+# Durable per-project context outside any repo, symlinked into every worktree.
+# Store layout + rules: ~/Desktop/ctx/README.md   |   surface: ctx help
+source /Users/irfan.m/.config/zsh/scripts/ctx.zsh
