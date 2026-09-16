@@ -104,6 +104,15 @@ _ctx_pin_clear() {  # drops this worktree's pin
   mv "$tmp" "$_CTX_PINS"
 }
 
+_ctx_pin_drop_task() {  # $1 project  $2 task file — keeps the project pin, forgets the task
+  [[ -f $_CTX_PINS ]] || return 0
+  local tmp; tmp=$(mktemp) || return 1
+  awk -F'\t' -v OFS='\t' -v p="$1" -v t="$2" '
+    $2==p && $3==t { print $1, $2, ""; next } { print }
+  ' "$_CTX_PINS" > "$tmp"
+  mv "$tmp" "$_CTX_PINS"
+}
+
 _ctx_pin_drop_project() {  # $1 project — used by archive
   [[ -f $_CTX_PINS ]] || return 0
   local tmp; tmp=$(mktemp) || return 1
@@ -176,6 +185,29 @@ _ctx_find_task() {  # $1 project dir  $2 slug-or-filename
   hits=("$1"/tasks/*-${2}.md(N) "$1"/tasks/${2}(N) "$1"/tasks/${2}.md(N))
   (( ${#hits} )) || return 1
   print -r -- "$hits[1]"
+}
+
+# Every task file matching a slug, deduped. `smtp` matches both 2026-09-10-smtp.md and
+# 2026-09-16-discourse-poc-smtp.md — a caller that deletes must see both, not the first.
+_ctx_find_tasks() {  # $1 project dir  $2 slug-or-filename
+  local -a hits
+  hits=("$1"/tasks/*-${2}.md(N) "$1"/tasks/${2}(N) "$1"/tasks/${2}.md(N))
+  (( ${#hits} )) || return 1
+  print -l -- ${(u)hits}
+}
+
+# The values on a ref line, backticks and label stripped: "`a`, `b`" -> "a, b"
+_ctx_ref_values() {  # $1 base label  $2 file
+  _ctx_ref_line "$1" "$2" | sed -E 's/^\*\*[A-Za-z]+:\*\* *//; s/`//g'
+}
+
+# A task's **Status:** as one short line, markdown bold stripped.
+_ctx_task_status() {  # $1 file  $2 max width
+  local st
+  st=$(grep -m1 -E '^\*\*Status:' "$1" 2>/dev/null | sed -E 's/^\*\*Status:\*\* *//')
+  st=${st//\*\*/}
+  (( ${#st} > $2 )) && st="${st[1,$(($2-1))]}…"
+  print -r -- "$st"
 }
 
 # ---------------------------------------------------------------------------
@@ -801,6 +833,91 @@ _ctx_cmd_ls() {
   done
 }
 
+# ctx tasks [project]   every task file in a project, current one marked
+_ctx_cmd_tasks() {
+  _ctx_resolve 2>/dev/null
+  if [[ -n $1 && -d $CTX_ROOT/$1 ]]; then
+    _CTX_PROJECT=$1; _CTX_PDIR="$CTX_ROOT/$1"
+  else
+    [[ -n $1 ]] && { print -u2 "ctx: no such project: $1"; return 1 }
+    _ctx_project || return 1
+  fi
+
+  local -a tasks; tasks=("$_CTX_PDIR"/tasks/*.md(N))
+  (( ${#tasks} )) || { print "$_CTX_PROJECT — no task files yet.  ctx task <slug>"; return 0 }
+
+  _ctx_task 2>/dev/null   # sets _CTX_TASK if one is current here
+  local cols=$COLUMNS; (( cols > 0 )) || cols=100     # unset/0 when there's no tty
+  local width=$(( cols - 42 )); (( width < 30 )) && width=30
+  local f mark br rp
+  print "$_CTX_PROJECT — ${#tasks} task(s)${_CTX_TASK:+   (* = current here)}"
+  print ""
+  for f in $tasks; do
+    mark=" "; [[ $f == $_CTX_TASK ]] && mark="*"
+    printf '%s %-38s %s\n' "$mark" "${f:t}" "$(_ctx_task_status $f $width)"
+    br=$(_ctx_ref_values Branch "$f"); rp=$(_ctx_ref_values Repo "$f")
+    print "    ${br:+branches: $br}${br:+   }${rp:+repos: $rp}"
+  done
+  print ""
+  print "  ctx use $_CTX_PROJECT/<slug>   ctx rm <slug>"
+}
+
+# ctx rm [project] <slug>   delete one task file
+_ctx_cmd_rm() {
+  _ctx_resolve 2>/dev/null
+  local proj="" slug=""
+  if (( $# >= 2 )); then
+    proj=$1; slug=$2
+  elif (( $# == 1 )); then
+    slug=$1
+  else
+    print -u2 "ctx rm: which task? (ctx tasks lists them)"; return 1
+  fi
+
+  if [[ -n $proj ]]; then
+    [[ -d $CTX_ROOT/$proj ]] || { print -u2 "ctx: no such project: $proj"; return 1 }
+    _CTX_PROJECT=$proj; _CTX_PDIR="$CTX_ROOT/$proj"
+  else
+    _ctx_project || return 1
+  fi
+
+  local -a hits; hits=("${(@f)$(_ctx_find_tasks "$_CTX_PDIR" "$slug")}"); hits=(${hits:#})
+  if (( ${#hits} == 0 )); then
+    print -u2 "ctx: no task '$slug' in $_CTX_PROJECT. Existing:"
+    printf '  %s\n' "$_CTX_PDIR"/tasks/*.md(N:t) >&2
+    return 1
+  fi
+  if (( ${#hits} > 1 )); then
+    print -u2 "ctx: '$slug' matches ${#hits} task files — name one exactly:"
+    printf '  %s\n' ${hits:t} >&2
+    return 1
+  fi
+
+  local f=$hits[1]
+  print "ctx: $_CTX_PROJECT/${f:t}"
+  print "     $(_ctx_task_status $f 200)"
+  print -n "ctx: delete it? (recoverable from the store's git history) [y/N] "
+  local reply; read -r reply
+  [[ $reply == [yY]* ]] || { print "aborted."; return 1 }
+
+  rm -f "$f"
+  _ctx_pin_drop_task "$_CTX_PROJECT" "${f:t}"
+
+  # drop its row from INDEX.md's subtask table
+  local idx="$_CTX_PDIR/INDEX.md" tmp
+  if [[ -f $idx ]]; then
+    tmp=$(mktemp)
+    awk -v n="${f:t}" '/^\|/ && index($0, n) { next } { print }' "$idx" > "$tmp" && mv "$tmp" "$idx"
+    grep -nF -- "${f:t}" "$idx" >/dev/null 2>&1 && {
+      print "ctx: INDEX.md still mentions it outside the table:"
+      grep -nF -- "${f:t}" "$idx" | sed 's/^/     /'
+    }
+  fi
+
+  print "ctx: deleted ${f:t}"
+  print "ctx: run 'ctx save' to commit  (undo: git -C $CTX_ROOT checkout -- $_CTX_PROJECT/tasks/${f:t})"
+}
+
 _ctx_cmd_cd() {
   _ctx_resolve 2>/dev/null
   if [[ -n $1 ]]; then cd "$CTX_ROOT/$1"; return; fi
@@ -820,6 +937,8 @@ same file from all of them.
   ctx new [name]        create a project (works outside a repo too). name defaults to branch
   ctx task [proj] [slug]  new subtask, or join the current repo/branch to an existing one.
                           a single arg is read as a project if it names one, otherwise as the slug
+  ctx tasks [proj]      list a project's task files: status, branches, repos. * = current here
+  ctx rm [proj] <slug>  delete one task file (asks first; recoverable from the store's git)
   ctx use <proj>[/<slug>]  pin THIS worktree to a project/task — the repo-independent answer when
                           nothing can be inferred. `ctx use` shows it, `ctx use --clear` drops it
   ctx edit [what]       $EDITOR the store file. what: index|decisions|manifests|task|claude
@@ -868,6 +987,8 @@ ctx() {
     status|st|'')     _ctx_cmd_status "$@" ;;
     new|n)            _ctx_cmd_new "$@" ;;
     task|t)           _ctx_cmd_task "$@" ;;
+    tasks|ts)         _ctx_cmd_tasks "$@" ;;
+    rm|remove)        _ctx_cmd_rm "$@" ;;
     use|u)            _ctx_cmd_use "$@" ;;
     edit|e)           _ctx_cmd_edit "$@" ;;
     path|p)           _ctx_cmd_path "$@" ;;
@@ -886,15 +1007,22 @@ ctx() {
 # ---------------------------------------------------------------------------
 
 _ctx() {
+  # contain the resolution globals — this runs in the user's live shell
+  local _CTX_TOP _CTX_COMMON _CTX_REPO _CTX_VIEW _CTX_BRANCH _CTX_PROJECT _CTX_PDIR _CTX_PSRC
   local -a subs
-  subs=(status new task use edit path save archive ls cd link help)
+  subs=(status new task tasks use rm edit path save archive ls cd link help)
   if (( CURRENT == 2 )); then
     _describe 'ctx subcommand' subs
     return
   fi
   case ${words[2]} in
     edit|e) _values 'file' index decisions manifests task claude ;;
-    use|u|archive|cd|task|t)
+    rm|remove)
+      local -a ts
+      _ctx_resolve 2>/dev/null
+      _ctx_project 2>/dev/null && ts=("$_CTX_PDIR"/tasks/*.md(N:t))
+      _describe 'task' ts ;;
+    use|u|archive|cd|task|t|tasks|ts)
       local -a ps
       ps=("${(@f)$(_ctx_projects)}")
       _describe 'project' ps ;;
