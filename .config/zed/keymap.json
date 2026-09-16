@@ -10,6 +10,10 @@
       "space e": "project_panel::ToggleFocus",
       "space /": "pane::DeploySearch",
       "space g": "git_panel::ToggleFocus",
+      // replays both existing dock toggles at once: cmd-r (chat, workspace::ToggleRightDock)
+      // and cmd-alt-j (cross-project threads sidebar, multi_workspace::ToggleWorkspaceSidebar) -
+      // Zed has no single action that toggles two docks together
+      "space a i": ["workspace::SendKeystrokes", "cmd-r cmd-alt-j"],
       // overrides vim's WindowTop/WindowBottom motions, same trade-off already made in cursor
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
