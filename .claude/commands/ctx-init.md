@@ -26,9 +26,13 @@ Use the repo's existing naming convention (check `ctx ls` and the directory name
 ctx new <name>
 ```
 
-That scaffolds `INDEX.md`, creates `tasks/`, registers the project in the repo's auto-loaded
-`CLAUDE.md`, and wires this worktree if it isn't already. If `ctx new` reports the project already
-exists, stop and ask me whether to overwrite `INDEX.md` or merge into it.
+That scaffolds `INDEX.md`, creates `tasks/`, links the project into this repo's view and its
+auto-loaded `CLAUDE.md` router, and wires this worktree if it isn't already. If `ctx new` reports
+the project already exists, stop and ask me whether to overwrite `INDEX.md` or merge into it.
+
+A project is **not** owned by a repo — it lives once in the store and any number of repos can link
+to it. If the plan spans several repos, say so in `INDEX.md`; each of those repos joins the project
+the first time `ctx use <name>` or `ctx task <name> <slug>` is run inside it.
 
 ## 3. Write INDEX.md
 
@@ -44,8 +48,8 @@ Every chat pays to read it, so density matters more than completeness.
 - `## Next steps` — the plan's first concrete actions, numbered, in order. If the plan has phases,
   this is phase 1 only — not all of them.
 - `## Deferred` — everything the plan explicitly scopes out or leaves for later.
-- `## Where things live` — repo path, the directories this work touches, and a link to the plan
-  file itself.
+- `## Where things live` — **every** repo this work touches with its path, the directories inside
+  them, and a link to the plan file itself. A future chat may be rooted in any of those repos.
 
 **Link to the plan, don't inline it.** Add it under "Read only if relevant" with a one-line note on
 what it's still the source of truth for. If the plan is long, say which sections matter.
@@ -62,9 +66,13 @@ reads is pure waste.
 
 ## 5. Optional: seed task files
 
-If the plan splits into phases you'll work on separately — likely in different worktrees — create a
-task file per phase with `ctx task <project> <phase-slug>` and put that phase's goal and steps in
-it. Don't do this for a plan you'll execute in one sitting.
+If the plan splits into phases you'll work on separately — likely in different worktrees, possibly
+in different repos — create a task file per phase with `ctx task <project> <phase-slug>` and put
+that phase's goal and steps in it. Don't do this for a plan you'll execute in one sitting.
+
+A phase that touches more than one repo is still **one** task file. Its `**Repos:**`,
+`**Worktrees:**` and `**Branches:**` lines are append-only lists that grow as the work reaches each
+one — never create a second file for the same phase.
 
 ## 6. Finish
 
