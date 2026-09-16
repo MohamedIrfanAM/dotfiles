@@ -13,7 +13,7 @@
       // replays both existing dock toggles at once: cmd-r (chat, workspace::ToggleRightDock)
       // and cmd-alt-j (cross-project threads sidebar, multi_workspace::ToggleWorkspaceSidebar) -
       // Zed has no single action that toggles two docks together
-      "space a i": ["workspace::SendKeystrokes", "cmd-r cmd-alt-j"],
+      "space a i": ["workspace::SendKeystrokes", "cmd-alt-j cmd-r"],
       // overrides vim's WindowTop/WindowBottom motions, same trade-off already made in cursor
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
@@ -125,7 +125,10 @@
       "s": "git::ToggleStaged",
       // default "l" is ExpandSelectedEntry (vim's l -> right arrow), which no-ops on files;
       // Confirm matches "enter" and opens the diff, same fix as project_panel::Open above
-      "l": "menu::Confirm"
+      "l": "menu::Confirm",
+      // more specific than the broad leader rule, so it wins once focus is confirmed inside the
+      // panel: same "already focused -> close the dock" fix as "space e" in the project panel
+      "space g": "workspace::ToggleLeftDock"
     }
   },
   {
