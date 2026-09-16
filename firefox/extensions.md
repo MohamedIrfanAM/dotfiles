@@ -8,3 +8,5 @@ nothing clean to symlink. Reinstall manually from addons.mozilla.org:
 - uBlock Origin
 - Vimium
 - Prevent Duplicate Tabs
+- Feeder.co
+- Firefox colors
