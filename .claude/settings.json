@@ -54,7 +54,6 @@
       "Bash(gcloud components list *)",
       "Bash(git status *)",
       "Bash(git diff *)",
-      "Bash(git -C * diff *)",
       "Bash(git log *)",
       "Bash(git show *)",
       "Bash(git blame *)",
@@ -140,5 +139,20 @@
   "effortLevel": "high",
   "theme": "dark",
   "editorMode": "vim",
-  "model": "opus[1m]"
+  "model": "opus[1m]",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/irfan.m/dotfiles/.claude/hooks/allow-git-diff.py",
+            "if": "Bash(git -C *)",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
 }
