@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "./hooks/allow-git-diff.py",
+        "matcher": "^git -C "
+      }
+    ]
+  }
+}
