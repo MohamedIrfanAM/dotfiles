@@ -6,6 +6,25 @@
       "headers": {
         "Authorization": "Bearer ${YOUTRACK_TOKEN}"
       }
+    },
+    "athena": {
+      "type": "http",
+      "url": "http://athenamcp.internal.media.net:18795/mcp",
+      "headers": {
+        "Authorization": "Bearer ${ATHENA_TOKEN}"
+      }
+    },
+    "discourse": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@discourse/mcp@0.3.1",
+        "--tools_mode",
+        "discourse_api_only",
+        "--auth_pairs",
+        "[{\"site\":\"https://nest.srv.media.net\",\"user_api_key\":\"${DISCOURSE_USER_API_KEY}\",\"user_api_client_id\":\"discourse-mcp\"}]"
+      ]
     }
   }
 }
