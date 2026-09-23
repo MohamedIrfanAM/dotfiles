@@ -136,10 +136,6 @@
     ]
   },
   "enableAllProjectMcpServers": true,
-  "effortLevel": "high",
-  "theme": "dark",
-  "editorMode": "vim",
-  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -154,5 +150,9 @@
         ]
       }
     ]
-  }
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark",
+  "editorMode": "vim"
 }
