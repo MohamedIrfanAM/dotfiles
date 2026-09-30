@@ -25,6 +25,10 @@
         "--auth_pairs",
         "[{\"site\":\"https://nest.srv.media.net\",\"user_api_key\":\"${DISCOURSE_USER_API_KEY}\",\"user_api_client_id\":\"discourse-mcp\"}]"
       ]
+    },
+    "grafana": {
+      "type": "sse",
+      "url": "https://mowx-or-mcp-grafana.srv.media.net/sse"
     }
   }
 }

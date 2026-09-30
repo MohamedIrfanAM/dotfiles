@@ -43,6 +43,7 @@
     "trust_all_worktrees": true
   },
   "vim_mode": true,
+  "relative_line_numbers": "enabled",
   "node": {
     "path": "/opt/homebrew/bin/node",
     "npm_path": "/opt/homebrew/bin/npm"
