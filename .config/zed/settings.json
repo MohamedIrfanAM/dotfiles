@@ -92,9 +92,11 @@
     "dock": "left"
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "button": true,
     "dock": "right",
-    "sidebar_side": "right",
     // newest Flash-tier Gemini model Zed supports; Pro is paid-only on the free API tier
     // (org Google Workspace Gemini access doesn't carry over to API access), and Flash-Lite
     // is more generous but less capable - Flash is the best free default
