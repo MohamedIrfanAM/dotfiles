@@ -2,3 +2,6 @@
 
 # Claude Code auto-synced claude.ai skills cache (re-downloaded automatically)
 .claude/skills/synced/
+
+# Claude Code skill trash
+.claude/skills/.trash/
