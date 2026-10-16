@@ -79,8 +79,9 @@
   "buffer_font_size": 13.0,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
+    // local theme family in ./themes/decay.json: Decay, Dark Decay, Decayce, Cosmic Decay, Light Decay
+    "light": "Light Decay",
+    "dark": "Decay",
   },
   // parity with nvim's snacks.nvim picker: show dotfiles/gitignored files
   "file_finder": {
