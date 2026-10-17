@@ -78,7 +78,7 @@ zvm_after_init() {
 bindkey '^ ' autosuggest-accept
 
 #FZF
-export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --border=rounded --inline-info --margin 1% --padding 1% --color="bg:#282c34,bg+:#3e4451,fg:#abb2bf,fg+:#ffffff,hl:#61afef,hl+:#61afef,info:#98c379,prompt:#e5c07b,pointer:#c678dd,marker:#e06c75,spinner:#56b6c2,header:#5c6370,border:#5c6370" --preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_DEFAULT_OPTS='--height 90% --layout=reverse --border=rounded --inline-info --margin 1% --padding 1% --color="bg:#171b20,bg+:#242931,fg:#b6beca,fg+:#e3e6eb,hl:#70a5eb,hl+:#70a5eb,info:#78dba9,prompt:#f1cf8a,pointer:#c68aee,marker:#e05f65,spinner:#74bee9,header:#6a7992,border:#485263" --preview "bat --style=numbers --color=always --line-range :500 {}"'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 eval "$(fzf --zsh)"
 

@@ -1,36 +1,47 @@
 return {
   {
-    "navarasu/onedark.nvim",
+    "decaycs/decay.nvim",
+    name = "decay",
+    lazy = false,
     priority = 1000,
-    config = function()
-      require("onedark").setup({
-        style = "darker",
-        transparent = true,
-        highlights = {
-          DiagnosticError = { fg = "#be5046" },
-          DiagnosticWarn = { fg = "#d19a66" },
-          DiagnosticInfo = { fg = "#61afef" },
-          DiagnosticHint = { fg = "#56b6c2" },
-          DiagnosticUnderlineError = {
-            undercurl = true,
-            sp = "#be5046",
-          },
-          DiagnosticUnderlineWarn = {
-            undercurl = true,
-            sp = "#d19a66",
-          },
-          -- extra groups the plugin doesn't clear by default
-          NormalFloat = { bg = "none" },
-          FloatBorder = { bg = "none" },
-          Pmenu = { bg = "none" },
-          PmenuSbar = { bg = "none" },
-          StatusLine = { bg = "none" },
-          StatusLineNC = { bg = "none" },
-          VertSplit = { bg = "none" },
-          WinSeparator = { bg = "none" },
-        },
+    init = function()
+      -- decay.nvim has no `transparent` option; clear the bg after it loads so
+      -- ghostty's opacity/blur shows through, like onedark's transparent = true did
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "decay*",
+        callback = function()
+          for _, group in ipairs({
+            "Normal",
+            "NormalNC",
+            "NormalFloat",
+            "FloatBorder",
+            "SignColumn",
+            "LineNr",
+            "EndOfBuffer",
+            "Pmenu",
+            "PmenuSbar",
+            "StatusLine",
+            "StatusLineNC",
+            "VertSplit",
+            "WinSeparator",
+          }) do
+            local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+            hl.bg = nil
+            vim.api.nvim_set_hl(0, group, hl)
+          end
+        end,
       })
-      require("onedark").load()
     end,
+    config = function()
+      -- styles: default (green accent, matches Zed "Decay"), dark, decayce, cosmic
+      require("decay").setup({
+        style = "default",
+        italics = { code = true, comments = true },
+      })
+    end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = { colorscheme = "decay-default" },
   },
 }

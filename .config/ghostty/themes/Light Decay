@@ -1,0 +1,23 @@
+# Light Decay (decaycs) — generated alongside the Zed theme
+palette = 0=#c5c8cd
+palette = 1=#bd3c42
+palette = 2=#69b373
+palette = 3=#ceac67
+palette = 4=#4d82c8
+palette = 5=#a367cb
+palette = 6=#519bc6
+palette = 7=#101419
+palette = 8=#989ba0
+palette = 9=#c24147
+palette = 10=#6eb878
+palette = 11=#d3b16c
+palette = 12=#5287cd
+palette = 13=#a86cd0
+palette = 14=#56a0cb
+palette = 15=#1f2328
+background = #dee1e6
+foreground = #101419
+cursor-color = #3c6843
+cursor-text = #dee1e6
+selection-background = #b6c3bd
+selection-foreground = #1f2328

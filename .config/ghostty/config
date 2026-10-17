@@ -1,5 +1,5 @@
 # ============================================================
-# Ghostty — One Dark Pro
+# Ghostty — Decay
 # ============================================================
 # ------------------------------------------------------------
 # Font
@@ -11,11 +11,12 @@ font-thicken = true
 # ------------------------------------------------------------
 # Window
 # ------------------------------------------------------------
-# One Dark Pro background
-background = #282c34
-foreground = #abb2bf
+# Colors (bg/fg, ANSI palette, cursor, selection) come from themes/<name>,
+# generated from the decaycs palettes alongside the Zed theme.
+# Variants: Decay, Dark Decay, Decayce, Cosmic Decay, Light Decay
+theme = Decay
 # Transparency
-background-opacity = 0.88
+background-opacity = 0.96
 # macOS background blur
 background-blur-radius = 20
 # Don't let the window become completely opaque when focused
@@ -30,46 +31,11 @@ window-decoration = true
 # ------------------------------------------------------------
 # Cursor
 # ------------------------------------------------------------
-cursor-color = #98c379
 cursor-style = block
 cursor-style-blink = true
 # Comet-like cursor trail (kitty-style), from https://github.com/sahaj-b/ghostty-cursor-shaders
 custom-shader = shaders/cursor_tail.glsl
 custom-shader-animation = always
-# ------------------------------------------------------------
-# One Dark Pro ANSI palette
-# ------------------------------------------------------------
-palette = 0=#1e2127
-palette = 1=#e06c75
-palette = 2=#98c379
-palette = 3=#e5c07b
-palette = 4=#61afef
-palette = 5=#c678dd
-palette = 6=#56b6c2
-palette = 7=#abb2bf
-palette = 8=#5c6370
-palette = 9=#e06c75
-palette = 10=#98c379
-palette = 11=#e5c07b
-palette = 12=#61afef
-palette = 13=#c678dd
-palette = 14=#56b6c2
-palette = 15=#ffffff
-# ------------------------------------------------------------
-# Selection
-# ------------------------------------------------------------
-selection-background = #3e4451
-selection-foreground = #ffffff
-# ------------------------------------------------------------
-# Shell
-# ------------------------------------------------------------
-shell-integration = detect
-# Selection
-# ------------------------------------------------------------
-
-selection-background = #3e4451
-selection-foreground = #ffffff
-
 # ------------------------------------------------------------
 # Shell
 # ------------------------------------------------------------

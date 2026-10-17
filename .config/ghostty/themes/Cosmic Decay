@@ -1,0 +1,23 @@
+# Cosmic Decay (decaycs) — generated alongside the Zed theme
+palette = 0=#2c2f44
+palette = 1=#ca7e9e
+palette = 2=#8fc8a8
+palette = 3=#efd9b0
+palette = 4=#8cacef
+palette = 5=#c7a5e5
+palette = 6=#91cedf
+palette = 7=#c1c4cb
+palette = 8=#3b3f5b
+palette = 9=#e3879c
+palette = 10=#a1d4bb
+palette = 11=#f6e4b6
+palette = 12=#94b4ef
+palette = 13=#cc9eef
+palette = 14=#a3d2e7
+palette = 15=#dddfe4
+background = #12131c
+foreground = #a5b7d5
+cursor-color = #a9acdb
+cursor-text = #12131c
+selection-background = #38394c
+selection-foreground = #dddfe4

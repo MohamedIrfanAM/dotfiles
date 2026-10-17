@@ -1,0 +1,23 @@
+# Decayce (decaycs) — generated alongside the Zed theme
+palette = 0=#1c1e27
+palette = 1=#e26c7c
+palette = 2=#95d3af
+palette = 3=#f1d8a5
+palette = 4=#8baff1
+palette = 5=#c79bf0
+palette = 6=#98d3ee
+palette = 7=#d0d3d8
+palette = 8=#151720
+palette = 9=#dd6777
+palette = 10=#90ceaa
+palette = 11=#ecd3a0
+palette = 12=#86aaec
+palette = 13=#c296eb
+palette = 14=#93cee9
+palette = 15=#cbced3
+background = #0d0f18
+foreground = #a5b6cf
+cursor-color = #8baff1
+cursor-text = #0d0f18
+selection-background = #2c374e
+selection-foreground = #d0d3d8

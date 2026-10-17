@@ -153,6 +153,6 @@
   },
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
-  "theme": "dark",
+  "theme": "dark-ansi",
   "editorMode": "vim"
 }
