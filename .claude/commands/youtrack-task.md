@@ -54,8 +54,9 @@ A. Terraform changes in terraform/mnet/gcp-oregon/storage-notification/main.tf (
    If the schema call fails or comes back empty, retry it once; if it still fails, stop and tell me.
    Don't copy custom fields from another issue — existing issues carry stale values (Stage
    `Complete`, Sprint Goal `Go Live`, an old Sprint) that are wrong for a new task.
-2. Show me the summary, description and custom fields, and wait for my approval.
+2. Show me the summary, description, custom fields and target board, and wait for my approval.
 3. Only then call `create_issue`.
-4. Add the issue to the **SRE Incoming** agile board (via the board/sprint field or command
-   the schema exposes). If it can't be added with the available tools, tell me instead of skipping silently.
+4. Add the issue to the **Mowx - SRE Incoming** agile board (exact name; via the board/sprint
+   field or command the schema exposes). If it can't be added with the available tools, tell me
+   instead of skipping silently.
 5. Reply with the issue ID and URL.
