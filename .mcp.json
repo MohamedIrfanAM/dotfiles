@@ -27,8 +27,8 @@
       ]
     },
     "grafana": {
-      "type": "sse",
-      "url": "https://mowx-or-mcp-grafana.srv.media.net/sse"
+      "type": "http",
+      "url": "https://mowx-or-mcp-grafana.srv.media.net/mcp"
     }
   }
 }
