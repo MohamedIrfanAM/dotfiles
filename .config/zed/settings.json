@@ -57,6 +57,7 @@
         ]
       },
       "default_config_options": {
+        "ultracode": false,
         "model": "opus",
         "mode": "auto"
       },
