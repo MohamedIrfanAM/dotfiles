@@ -29,6 +29,13 @@
     "grafana": {
       "type": "http",
       "url": "https://mowx-or-mcp-grafana.srv.media.net/mcp"
+    },
+    "mowx-sre": {
+      "type": "http",
+      "url": "https://forge.pidp.reports.mn/servers/651e56df07e248a3a2fb009fabf9f75f/mcp",
+      "headers": {
+        "Authorization": "Bearer ${CONTEXT_FORGE_TOKEN}"
+      }
     }
   }
 }
