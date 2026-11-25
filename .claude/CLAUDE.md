@@ -12,3 +12,14 @@ The concrete per-tool allow/ask rules (which kubectl/gcloud/terraform/helm/git s
 - Never commit to `main`, `master`, or `production`.
 - No `Co-Authored-By` or AI attribution in commits/PRs.
 - One commit per logical change.
+
+## Merge request titles
+
+Prefix MR titles with `[<region>][<component>]`, then a short description.
+
+- Region: `OR`, `EU`, `SC`, `SG`
+- Component:
+  - IaC changes: the infra area, e.g. `GKE`, `IAM`
+  - k8s changes: the app/service, e.g. `istio`, `envoy`, `liveramp`
+
+Examples: `[OR][GKE] Increase default node pool max size`, `[EU][istio] Bump sidecar memory limits`.
